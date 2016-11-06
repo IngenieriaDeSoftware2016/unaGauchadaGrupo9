@@ -58,3 +58,4 @@ group :development do
 
   gem 'bootstrap-sass', '~> 3.3.6'
 end
+bundle
