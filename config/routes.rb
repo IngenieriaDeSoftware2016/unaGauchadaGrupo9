@@ -1,9 +1,20 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   resources :usuarios
   devise_for :usuarios
   devise_scope :usuario do
     root :to => 'devise/sessions#new'
   end
+=======
+
+  devise_for :usuarios,controllers: { registrations: "registrations" }
+  resources :usuarios
+
+  devise_scope :usuario do
+    root :to => 'devise/sessions#new'
+  end
+  
+>>>>>>> develop
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
