@@ -3,8 +3,11 @@ class UsuariosController < ApplicationController
   def index
   end
 
-  def show
+  def admin
   end
+
+  #def show
+  #end
 
   def edit
   end

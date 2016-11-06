@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :usuarios,controllers: { registrations: "registrations" }
   resources :usuarios
+  devise_for :usuarios,controllers: { registrations: "registrations" }
+
 
   devise_scope :usuario do
     root :to => 'devise/sessions#new'
