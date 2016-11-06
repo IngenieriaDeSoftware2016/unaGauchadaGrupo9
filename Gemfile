@@ -46,5 +46,8 @@ group :development do
 
   gem 'hirb'
 
-  gem 'devise' 
+  gem 'devise'
+
+  gem 'bootstrap-sass', '~> 3.3.6'
+
 end

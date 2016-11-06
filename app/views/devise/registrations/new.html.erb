@@ -9,6 +9,26 @@
   </div>
 
   <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :edad %><br />
+    <%= f.number_field :edad, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :localidad %><br />
+    <%= f.text_field :localidad, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telefono %><br />
+    <%= f.phone_field :telefono, autofocus: true %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -19,6 +39,14 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :rol, :value => "user"%>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :puntaje, :value => 0%>
   </div>
 
   <div class="actions">
