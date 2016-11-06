@@ -1,13 +1,16 @@
 class UsuariosController < ApplicationController
 
   def index
+    if !session[:usuario_id]
+      return '/'
+    end
   end
 
-  def admin
+  def show
+    if !current_usuario.try(:admin?)
+      return '/'
+    end
   end
-
-  #def show
-  #end
 
   def edit
   end
