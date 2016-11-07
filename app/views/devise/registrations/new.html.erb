@@ -1,143 +1,74 @@
 <h2>Sign up</h2>
 <div id="main-container" class="container-fluid">
-  <div class="row">
-    <div id="headerInfo" class="col-xs-12">
-      <div class="jumbotron">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
+      <div class="row">
+        <div id="headerIn" class="col-xs-12">
+          <div class="jumbotron">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div id="main-content" class="col-xs-12">
+          <div class="jumbotron">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="example-text-input" class="col-xs-2 col-form-label">Text</label>
-    <div class="col-xs-10">
-      <input class="form-control" type="text" value="Artisanal kale" id="example-text-input">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="example-search-input" class="col-xs-2 col-form-label">Search</label>
-    <div class="col-xs-10">
-      <input class="form-control" type="search" value="How do I shoot web" id="example-search-input">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for=":email" class="col-xs-2 col-form-label">email</label>
-    <div class="col-xs-10">
-      <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="example-url-input" class="col-xs-2 col-form-label">URL</label>
-    <div class="col-xs-10">
-      <input class="form-control" type="url" value="https://getbootstrap.com" id="example-url-input">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="example-tel-input" class="col-xs-2 col-form-label">Telephone</label>
-    <div class="col-xs-10">
-      <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="example-password-input" class="col-xs-2 col-form-label">Password</label>
-    <div class="col-xs-10">
-      <input class="form-control" type="password" value="hunter2" id="example-password-input">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="example-number-input" class="col-xs-2 col-form-label">Number</label>
-    <div class="col-xs-10">
-      <input class="form-control" type="number" value="42" id="example-number-input">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="example-datetime-local-input" class="col-xs-2 col-form-label">Date and time</label>
-    <div class="col-xs-10">
-      <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="example-date-input" class="col-xs-2 col-form-label">Date</label>
-    <div class="col-xs-10">
-      <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="example-month-input" class="col-xs-2 col-form-label">Month</label>
-    <div class="col-xs-10">
-      <input class="form-control" type="month" value="2011-08" id="example-month-input">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="example-week-input" class="col-xs-2 col-form-label">Week</label>
-    <div class="col-xs-10">
-      <input class="form-control" type="week" value="2011-W33" id="example-week-input">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="example-time-input" class="col-xs-2 col-form-label">Time</label>
-    <div class="col-xs-10">
-      <input class="form-control" type="time" value="13:45:00" id="example-time-input">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="example-color-input" class="col-xs-2 col-form-label">Color</label>
-    <div class="col-xs-10">
-      <input class="form-control" type="color" value="#563d7c" id="example-color-input">
-    </div>
-  </div>
 </div>
 
 
-<div class="field">
-  <%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %>
-</div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
 
-<div class="field">
-  <%= f.label :nombre %><br />
-  <%= f.text_field :nombre, autofocus: true %>
-</div>
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre, autofocus: true %>
+  </div>
 
-<div class="field">
-  <%= f.label :edad %><br />
-  <%= f.number_field :edad, min: 18, max: 120, autofocus: true %>
-</div>
+  <div class="field">
+    <%= f.label :edad %><br />
+    <%= f.number_field :edad, min: 18, max: 120, autofocus: true %>
+  </div>
 
-<div class="field">
-  <%= f.label :localidad %><br />
-  <%= f.text_field :localidad, autofocus: true %>
-</div>
+  <div class="field">
+    <%= f.label :localidad %><br />
+    <%= f.text_field :localidad, autofocus: true %>
+  </div>
 
-<div class="field">
-  <%= f.label :telefono %><br />
-  <%= f.phone_field :telefono, autofocus: true %>
-</div>
+  <div class="field">
+    <%= f.label :telefono %><br />
+    <%= f.phone_field :telefono, autofocus: true %>
+  </div>
 
-<div class="field">
-  <%= f.label :password %>
-  <% if @minimum_password_length %>
-  <em>(<%= @minimum_password_length %> characters minimum)</em>
-  <% end %><br />
-  <%= f.password_field :password, autocomplete: "off" %>
-</div>
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
 
-<div class="field">
-  <%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation, autocomplete: "off" %>
-</div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
 
-<div class="field">
-  <%= f.hidden_field :admin, :value => false%>
-</div>
+  <div class="field">
+    <%= f.hidden_field :admin, :value => false%>
+  </div>
 
-<div class="field">
-  <%= f.hidden_field :puntaje, :value => 0%>
-</div>
+  <div class="field">
+    <%= f.hidden_field :puntaje, :value => 0%>
+  </div>
 
-<div class="actions">
-  <%= f.submit "Sign up" %>
-</div>
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
