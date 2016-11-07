@@ -1,6 +1,5 @@
 class GenerarTablaUsuarios < ActiveRecord::Migration
   def change
-    remove_table :usuarios
     create_table :usuarios do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
@@ -47,9 +46,11 @@ class GenerarTablaUsuarios < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true, using: :btree
+    add_index "usuarios", ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true, using: :btree
 
-    add_index :usuarios, :email,                unique: true
-    add_index :usuarios, :reset_password_token, unique: true
+    #add_index :usuarios, :email,                unique: true
+    #add_index :usuarios, :reset_password_token, unique: true
     # add_index :usuarios, :confirmation_token,   unique: true
     # add_index :usuarios, :unlock_token,         unique: true
   end
