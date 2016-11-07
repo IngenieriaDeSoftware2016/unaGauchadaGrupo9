@@ -1,24 +1,7 @@
 <h2>Sign up</h2>
-<div id="main-container" class="container-fluid">
-      <div class="row">
-        <div id="headerIn" class="col-xs-12">
-          <div class="jumbotron">
-            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= devise_error_messages! %>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div id="main-content" class="col-xs-12">
-          <div class="jumbotron">
-            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= devise_error_messages! %>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
 
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
 
   <div class="field">
     <%= f.label :email %><br />
