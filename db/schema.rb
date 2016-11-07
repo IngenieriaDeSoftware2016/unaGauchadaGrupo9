@@ -11,24 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20161106163930) do
-=======
+
 ActiveRecord::Schema.define(version: 20161106220615) do
->>>>>>> develop
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
-  create_table "usuarios", force: :cascade do |t|
-    t.string   "email",                              default: "", null: false
-    t.string   "encrypted_password",                 default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                      default: 0,  null: false
-=======
   create_table "gauchadas", force: :cascade do |t|
     t.integer  "id_creador"
     t.string   "descripcion"
@@ -52,28 +40,18 @@ ActiveRecord::Schema.define(version: 20161106220615) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",                      default: 0,     null: false
->>>>>>> develop
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
     t.string   "nombre",                 limit: 255
-<<<<<<< HEAD
-    t.string   "rol",                    limit: 50
-=======
->>>>>>> develop
     t.integer  "edad"
     t.string   "localidad",              limit: 255
     t.integer  "puntaje"
     t.string   "telefono",               limit: 255
-<<<<<<< HEAD
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
-=======
-    t.datetime "created_at",                                         null: false
-    t.datetime "updated_at",                                         null: false
     t.boolean  "admin",                              default: false
->>>>>>> develop
   end
 
   add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true, using: :btree
