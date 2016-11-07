@@ -1,5 +1,6 @@
 class GenerarTablaUsuarios < ActiveRecord::Migration
   def change
+    remove_table :usuarios
     create_table :usuarios do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
