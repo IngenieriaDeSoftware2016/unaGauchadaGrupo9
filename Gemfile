@@ -30,6 +30,9 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'autoprefixer-rails'
 
+gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails'
+
+
 gem 'devise'
 gem 'rails_12factor'
 
