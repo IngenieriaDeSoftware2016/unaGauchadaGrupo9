@@ -5,14 +5,13 @@
           <%= link_to root_path, class: 'navbar-brand' do %>
             <%= image_tag "logo.png", title: "Logo", class: "logo" %>
           <% end %>
-          <%= link_to('Logout', destroy_usuario_session_path, :method => :delete) %>
           <% if usuario_signed_in? %>
             Logged in as <strong><%= current_usuario.email %></strong>.
-            <%= link_to 'Edit profile', edit_usuario_registration, :class => 'navbar-link' %> |
-            <%= link_to "Logout", destroy_usuario_session, method: :delete, :class => 'navbar-link'  %>
+            <%= link_to 'Edit profile', edit_usuario_registration_path, :class => 'navbar-link' %> |
+            <%= link_to "Logout", destroy_usuario_session_path, method: :delete, :class => 'navbar-link'  %>
           <% else %>
-            <%= link_to "Sign up", new_usuario_registration, :class => 'navbar-link'  %> |
-            <%= link_to "Login", new_usuario_session, :class => 'navbar-link'  %>
+            <%= link_to "Sign up", new_usuario_registration_path, :class => 'navbar-link'  %> |
+            <%= link_to "Login", new_usuario_session_path, :class => 'navbar-link'  %>
           <% end %>
         </div>
         <div class="collapse navbar-collapse">
