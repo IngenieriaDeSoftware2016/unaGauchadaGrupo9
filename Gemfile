@@ -28,6 +28,8 @@ gem 'hirb'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
+gem 'autoprefixer-rails'
+
 gem 'devise'
 gem 'rails_12factor'
 
