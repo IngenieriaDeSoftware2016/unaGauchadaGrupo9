@@ -1,1 +1,24 @@
-<h1> USUARIO </h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Usuario</th>
+      <th>Descrpcion</th>
+      <th>Creada</th>
+      <th>Vencimiento</th>
+      <th>Imagen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Gauchada.all.each do |gauchada| %>
+    <tr>
+    <th scope="row">1</th>
+    <td><%= Usuario.find(gauchada.id_creador).nombre %></td>
+    <td><%= gauchada.descripcion %></td>
+    <td><%= gauchada.creacion %></td>
+    <td><%= gauchada.vencimiento %></td>
+    <td><%= gauchada.descripcion %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

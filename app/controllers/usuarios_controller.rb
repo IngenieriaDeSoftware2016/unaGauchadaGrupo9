@@ -6,7 +6,6 @@ class UsuariosController < ApplicationController
   end
 
   def show
-
   end
 
   def edit
@@ -25,6 +24,10 @@ class UsuariosController < ApplicationController
       redirect_to usuarios_path
     end
     #redirect_to "/", alert: 'You dont have enough permissions to be here' unless current_usuario.admin?
+  end
+
+  def default
+
   end
 
 end

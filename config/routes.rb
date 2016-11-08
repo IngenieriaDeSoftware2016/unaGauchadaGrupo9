@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'gauchada/index'
+
+  get 'gauchada/show'
+
   devise_for :usuarios
 
   resources :usuarios
