@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_scope :usuario do
     root :to => 'devise/sessions#new'
   end
+  get '/usuarios/admin', to:'usuarios#admin'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

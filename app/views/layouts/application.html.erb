@@ -7,21 +7,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <p class="navbar-text pull-right">
 
   <%= render 'layouts/header' %>
 
-  <div id="main-container" class="container">
+  <div id="main-container" class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+          <% if flash[:notice] %>
+            <div class="alert alert-info"> <%= flash[:notice] %> </div>
+          <% end %>
+          <% if flash[:alert] %>
+            <div class="alert alert-danger"> <%= flash[:alert] %> </div>
+          <% end %>
+          <% if flash[:succes] %>
+            <div class="alert alert-succes"> <%= flash[:succes] %> </div>
+          <% end %>
+          <% if flash[:error] %>
+            <div class="alert alert-warning"> <%= flash[:error] %> </div>
+          <% end %>
+        </div>
+      </div>
       <div class="row">
         <div class="col-xs-3">
           <h3>UnaGauchada</h3>
         </div>
         <div class="col-xs-9">
-          <% if flash[:notice] %>
-            <div class="alert alert-info"> <%= flash[:notice] %> </div>
-          <% end %>
           <%= yield %>
         </div>
       </div>
