@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   get 'gauchada/show'
 
+
   devise_for :usuarios
 
   resources :usuarios

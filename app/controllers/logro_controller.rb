@@ -21,11 +21,6 @@ class LogroController < ApplicationController
   end
 
   def update
-    @logro = Logro.find(params[:id])
-    if @logro.update_attributes(logro_params)
-      # Handle a successful update.
-    else
-      rend
   end
 
 end
