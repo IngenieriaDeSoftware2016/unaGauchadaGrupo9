@@ -15,4 +15,9 @@ class LogroController < ApplicationController
 
   def delete
   end
+
+  def show
+
+  end
+
 end

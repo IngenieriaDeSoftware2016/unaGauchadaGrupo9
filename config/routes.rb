@@ -8,6 +8,16 @@ Rails.application.routes.draw do
 
   get 'logro/delete'
 
+  get 'logro/show'
+
+  get 'logro/index'
+
+  get 'logro/new'
+
+  get 'logro/edit'
+
+  get 'logro/delete'
+
   get 'main/index'
 
   get 'main/under_construction'

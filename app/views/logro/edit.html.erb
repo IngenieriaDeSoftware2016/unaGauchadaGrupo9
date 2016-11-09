@@ -1,6 +1,6 @@
 <h2>Editar Logro</h2>
 
-<%= form_for(@logro, html: { method: :put }) do |l| %>
+<%= form_for(@logro, url: logro_path(@logro.id), html: { method: :put }) do |l| %>
 
 <div class="field">
   <%= l.label :nombre %><br />
@@ -13,7 +13,7 @@
 </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= l.submit "Actualizar" %>
   </div>
 <% end %>
 

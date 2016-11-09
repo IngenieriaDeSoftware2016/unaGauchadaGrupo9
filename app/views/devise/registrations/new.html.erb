@@ -4,40 +4,40 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :Email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :nombre %><br />
+    <%= f.label :Nombre %><br />
     <%= f.text_field :nombre, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :edad %><br />
+    <%= f.label :Edad %><br />
     <%= f.number_field :edad, min: 18, max: 120, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :localidad %><br />
+    <%= f.label :Localidad %><br />
     <%= f.text_field :localidad, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :telefono %><br />
+    <%= f.label :Telefono %><br />
     <%= f.phone_field :telefono, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :Contraseña %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> Caracteres como minimo)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :Repetir_Contraseña %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
@@ -50,7 +50,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Registrarse" %>
   </div>
 <% end %>
 
