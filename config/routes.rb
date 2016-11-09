@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-
+  get '/logros/new' , to: 'logros#new'
+  get '/logros/show' , to: 'logros#show'
 
 
   devise_for :usuarios
