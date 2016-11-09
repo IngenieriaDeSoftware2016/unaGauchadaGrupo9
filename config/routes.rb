@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'logro/index'
+
+  get 'logro/new'
+
+  get 'logro/edit'
+
+  get 'logro/delete'
+
   get 'main/index'
 
   get 'main/under_construction'
@@ -11,6 +19,7 @@ Rails.application.routes.draw do
   devise_for :usuarios
 
   resources :usuarios
+  resources :logros
   devise_scope :usuario do
     root :to => 'devise/sessions#new'
   end
