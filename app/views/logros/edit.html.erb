@@ -12,6 +12,9 @@
   <%= l.number_field :puntaje, autofocus: true %>
 </div>
 
+<div class="field">
+  <%= l.hidden_field :id, :value => params[:id]%>
+</div>
 
   <div class="actions">
     <%= l.submit "Actualizar" %>

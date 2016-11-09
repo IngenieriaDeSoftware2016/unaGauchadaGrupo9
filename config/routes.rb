@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'logro/index'
+  get 'logros/index'
 
-  get 'logro/new'
+  get 'logros/new'
 
-  get 'logro/edit'
+  get 'logros/edit'
 
-  get 'logro/delete'
+  get 'logros/delete'
 
-  get 'logro/show'
+  get 'logros/show'
 
-  put 'logro/update'
+  put 'logros/update'
 
   get 'main/index'
 

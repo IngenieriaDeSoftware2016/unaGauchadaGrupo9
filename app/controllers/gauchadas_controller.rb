@@ -1,6 +1,6 @@
-class GauchadaController < ApplicationController
+class GauchadasController < ApplicationController
   def index
-      
+
   end
 
   def show
