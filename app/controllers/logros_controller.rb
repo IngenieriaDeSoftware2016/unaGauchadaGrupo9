@@ -9,12 +9,21 @@ class LogrosController < ApplicationController
 
   def edit
     @logro = Logro.find(params[:id])
+    if @logro.nombre=="Politico"
+      flash[:alert]="No puede editarse este logro"
+      redirect_to :back
+    end
   end
 
   def destroy
     @logro=Logro.find(params[:id])
-    @logro.destroy
-    redirect_to usuarios_admin_path
+    if @logro.nombre!="Politico"
+      @logro.destroy
+      redirect_to usuarios_admin_path
+    else
+      flash[:alert]="No puede borrarse este logro"
+      redirect_to :back
+    end
   end
 
   def show
@@ -29,8 +38,8 @@ class LogrosController < ApplicationController
    end
 
   def update
-    if(params[:id]!=2)
-      @logro=Logro.find(params[:id])
+    @logro=Logro.find(params[:id])
+    if @logro.nombre!="Politico"
       @logro.update(logro_params)
       #@logro = Logro.find(params[:id])
       #@logro.nombre=params[:nombre]
