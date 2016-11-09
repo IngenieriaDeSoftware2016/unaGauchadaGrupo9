@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :usuarios
   resources :logros
+  resources :gauchadas
   devise_scope :usuario do
     root :to => 'devise/sessions#new'
   end
