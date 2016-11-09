@@ -1,0 +1,21 @@
+<h2>Editar Logro</h2>
+
+<%= form_for(@logro) do |l| %>
+
+<div class="field">
+  <%= l.label :nombre %><br />
+  <%= l.text_field :nombre, autofocus: true %>
+</div>
+
+<div class="field">
+  <%= l.label :puntaje %><br />
+  <%= l.number_field :puntaje,min: 0, autofocus: true %>
+</div>
+
+
+  <div class="actions">
+    <%= l.submit "Actualizar" %>
+  </div>
+<% end %>
+
+<%= link_to "Back", :back %>
