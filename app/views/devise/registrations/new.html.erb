@@ -5,27 +5,27 @@
 
   <div class="field">
     <%= f.label :Email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true,required: true %>
   </div>
 
   <div class="field">
     <%= f.label :Nombre %><br />
-    <%= f.text_field :nombre, autofocus: true %>
+    <%= f.text_field :nombre, autofocus: true ,required: true%>
   </div>
 
   <div class="field">
     <%= f.label :Edad %><br />
-    <%= f.number_field :edad, min: 18, max: 120, autofocus: true %>
+    <%= f.number_field :edad, min: 18, max: 120, autofocus: true,required: true %>
   </div>
 
   <div class="field">
     <%= f.label :Localidad %><br />
-    <%= f.text_field :localidad, autofocus: true %>
+    <%= f.text_field :localidad, autofocus: true ,required: true%>
   </div>
 
   <div class="field">
     <%= f.label :Telefono %><br />
-    <%= f.phone_field :telefono, autofocus: true %>
+    <%= f.phone_field :telefono, autofocus: true ,required: true%>
   </div>
 
   <div class="field">
@@ -33,12 +33,12 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> Caracteres como minimo)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off" ,required: true%>
   </div>
 
   <div class="field">
     <%= f.label :Repetir_Contraseña %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off",required: true %>
   </div>
 
   <div class="field">

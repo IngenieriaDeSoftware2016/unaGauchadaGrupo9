@@ -1,6 +1,6 @@
 <h2>Editar Logro</h2>
 
-<%= form_for(@logro, url: logro_path(@logro.id), html: { method: :put }) do |l| %>
+<%= form_for(Logro.find(params[:id])) do |l| %>
 
 <div class="field">
   <%= l.label :nombre %><br />
@@ -10,6 +10,10 @@
 <div class="field">
   <%= l.label :puntaje %><br />
   <%= l.number_field :puntaje, autofocus: true %>
+</div>
+
+<div class="field">
+  <%= l.hidden_field :id, :value => params[:id]%>
 </div>
 
   <div class="actions">
