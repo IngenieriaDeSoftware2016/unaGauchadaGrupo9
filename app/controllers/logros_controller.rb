@@ -29,14 +29,18 @@ class LogrosController < ApplicationController
    end
 
   def update
-    @logro=Logro.find(params[:id])
-    @logro.update(logro_params)
-    #@logro = Logro.find(params[:id])
-    #@logro.nombre=params[:nombre]
-    #@logro.puntaje=params[:puntaje]
-    #@logro.save
-    #@logro.update(nombre: params[:nombre], puntaje: params[:puntaje])
-    redirect_to logro_path(@logro)
+    if(params[:id]!=2)
+      @logro=Logro.find(params[:id])
+      @logro.update(logro_params)
+      #@logro = Logro.find(params[:id])
+      #@logro.nombre=params[:nombre]
+      #@logro.puntaje=params[:puntaje]
+      #@logro.save
+      #@logro.update(nombre: params[:nombre], puntaje: params[:puntaje])
+      redirect_to logro_path(@logro)
+    else
+      redirect_to :back
+    end
   end
 
   private
