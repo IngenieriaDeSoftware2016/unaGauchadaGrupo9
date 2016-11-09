@@ -1,24 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'logros/index'
 
-  get 'logros/new'
-
-  get 'logros/edit'
-
-  get 'logros/delete'
-
-  get 'logros/show'
-
-  put 'logros/update'
-
-  get 'main/index'
-
-  get 'main/under_construction'
-
-  get 'gauchada/index'
-
-  get 'gauchada/show'
 
 
   devise_for :usuarios

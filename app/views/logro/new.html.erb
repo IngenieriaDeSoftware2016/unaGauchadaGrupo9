@@ -1,0 +1,21 @@
+<h2>Crear Logro</h2>
+
+<%= form_for(@logro) do |l| %>
+
+<div class="field">
+  <%= l.label :nombre %><br />
+  <%= l.text_field :nombre,required: true, autofocus: true %>
+</div>
+
+<div class="field">
+  <%= l.label :puntaje %><br />
+  <%= l.number_field :puntaje,required: true, autofocus: true %>
+</div>
+
+
+  <div class="actions">
+    <%= l.submit "Crear" %>
+  </div>
+<% end %>
+
+<%= link_to "Back", :back %>
