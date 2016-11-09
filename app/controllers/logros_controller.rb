@@ -15,6 +15,7 @@ class LogrosController < ApplicationController
   end
 
   def show
+    @logro =  Logro.find(params[:id])
 
   end
 
