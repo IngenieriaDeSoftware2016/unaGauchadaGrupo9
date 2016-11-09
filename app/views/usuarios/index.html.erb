@@ -6,7 +6,7 @@
       <th>Descrpcion</th>
       <th>Creada</th>
       <th>Vencimiento</th>
-      <th>Imagen</th>
+      <th>Abrir</th>
     </tr>
   </thead>
   <tbody>
@@ -18,7 +18,7 @@
     <td><%= gauchada.descripcion %></td>
     <td><%= gauchada.creacion %></td>
     <td><%= gauchada.vencimiento %></td>
-    <td><%= gauchada.descripcion %></td>
+    <td><%= link_to 'Ver', gauchada_path(gauchada), :class => 'button'%></td>
     </tr>
     <% end %>
   </tbody>
