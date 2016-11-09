@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get '/logros/new' , to: 'logros#new'
   get '/logros/show' , to: 'logros#show'
+  get '/under_construction' , to: 'mains#under_construction'
 
 
   devise_for :usuarios
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   resources :usuarios
   resources :logros
   resources :gauchadas
+  resources :mains
   devise_scope :usuario do
     root :to => 'devise/sessions#new'
   end
