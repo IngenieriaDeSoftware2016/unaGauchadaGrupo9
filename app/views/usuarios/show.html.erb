@@ -15,7 +15,7 @@
     <td><%= l.nombre %></td>
     <td><%= l.puntaje %></td>
     <td><%= link_to 'Editar', edit_logro_path(l), :class => 'button'%></td>
-    <td><%= link_to 'Borrar', edit_logro_path, :class => 'button'%></td>
+    <td><%= link_to 'Borrar', l, method: :delete, :class => 'button'%></td>
     </tr>
     <% end %>
   </tbody>

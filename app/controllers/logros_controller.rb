@@ -11,7 +11,10 @@ class LogrosController < ApplicationController
     @logro = Logro.find(params[:id])
   end
 
-  def delete
+  def destroy
+    @logro=Logro.find(params[:id])
+    @logro.destroy
+    redirect_to usuarios_admin_path
   end
 
   def show
