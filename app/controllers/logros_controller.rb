@@ -38,7 +38,7 @@ class LogrosController < ApplicationController
        else
          message=""
          @logro.errors.full_messages.each do |msg|
-           message=message+msg+"<br/>"
+           message=message+msg+"/n"
          end
          flash[:error]=message
          #flash[:error]= @logro.errors.full_messages.to_sentence
@@ -49,12 +49,16 @@ class LogrosController < ApplicationController
   def update
     @logro=Logro.find(params[:id])
     if @logro.nombre!="Politico"
-      @logro.update(logro_params)
-      #@logro = Logro.find(params[:id])
-      #@logro.nombre=params[:nombre]
-      #@logro.puntaje=params[:puntaje]
-      #@logro.save
-      #@logro.update(nombre: params[:nombre], puntaje: params[:puntaje])
+      if(@logro.update(logro_params))
+        flash[:notice]="Logro actualizado"
+      else
+        message=""
+        @logro.errors.full_messages.each do |msg|
+          message=message+msg+"/n"
+        end
+        flash[:error]=message
+        #flash[:error]= @logro.errors.full_messages.to_sentence
+      end
       redirect_to logro_path(@logro)
     else
       redirect_to :back
