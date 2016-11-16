@@ -35,8 +35,8 @@ class LogrosController < ApplicationController
        @logro = Logro.new(logro_params)
        if(@logro.save)
          flash[:notice]="Logro guardado"
-         redirect_to usuarios_admin_path
        end
+       redirect_to usuarios_admin_path
    end
 
   def update
