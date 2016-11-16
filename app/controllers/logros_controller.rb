@@ -38,7 +38,7 @@ class LogrosController < ApplicationController
        else
          message=""
          @logro.errors.full_messages.each do |msg|
-           message=message+msg+"\n\r"
+           message=message+msg.join("<br/>").html_safe
          end
          flash[:error]=message
          #flash[:error]= @logro.errors.full_messages.to_sentence
