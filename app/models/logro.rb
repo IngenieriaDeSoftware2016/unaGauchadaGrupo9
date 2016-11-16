@@ -1,4 +1,4 @@
 class Logro < ActiveRecord::Base
-    validates :puntaje, uniqueness: true
-    validates :nombre, uniqueness: {message: "El nombre seleccionado ya existe"}
+    validates :puntaje, uniqueness: {message: ": El puntaje seleccionado para el logro ya existe"}
+    validates :nombre, uniqueness: {message: ": El nombre seleccionado para el logro ya existe"}
 end
