@@ -36,9 +36,11 @@ class LogrosController < ApplicationController
        if(@logro.save)
          flash[:notice]="Logro guardado"
        else
+         message=""
          @logro.errors.full_messages.each do |msg|
-           flash[:error]=msg
+           message=message+msg+'/n'
          end
+         flash[:error]=message
          #flash[:error]= @logro.errors.full_messages.to_sentence
        end
        redirect_to usuarios_admin_path
