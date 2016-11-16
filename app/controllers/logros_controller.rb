@@ -59,7 +59,7 @@ class LogrosController < ApplicationController
         flash[:error]=message
         #flash[:error]= @logro.errors.full_messages.to_sentence
       end
-      redirect_to logro_path(@logro)
+      redirect_to usuarios_admin_path
     else
       redirect_to :back
     end
