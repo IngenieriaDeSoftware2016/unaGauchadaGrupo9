@@ -35,6 +35,7 @@ class LogrosController < ApplicationController
        @logro = Logro.new(logro_params)
        if(@logro.save)
          redirect_to logro_path(@logro)
+       end
    end
 
   def update
