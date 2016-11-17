@@ -77,7 +77,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  #config.action_mailer.default_url_options = { :host => "una-gauchada-grupo9.herokuapp.com" }
+  config.action_mailer.default_url_options = { :host => "una-gauchada-grupo9.herokuapp.com" }
   config.action_mailer.smtp_settings = {
     :address => "mailtrap.io",
     :port => 2525,
