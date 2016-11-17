@@ -82,7 +82,7 @@ Rails.application.configure do
     :address => "mailtrap.io",
     :port => 2525,
     :authentication => :plain,
-    :user_name => "LOGIN",
-    :password => "PASSWORD"
+    :user_name => "minigtraverso@gmail.com",
+    :password => "123123"
    }
 end
