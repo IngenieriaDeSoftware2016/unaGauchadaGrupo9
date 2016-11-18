@@ -1,5 +1,6 @@
 class GauchadasController < ApplicationController
-  before_filter :require_no_authentication, only: :show
+  skip_before_action :authenticate_user!, :only => :gauchada_path
+  skip_authorize_resource :only => :gauchada_path
   def index
 
   end
