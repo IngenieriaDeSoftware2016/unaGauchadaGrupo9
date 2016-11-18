@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   resources :logros
   resources :gauchadas
   resources :mains
-  match ':usuarios/admin', :to => 'usuarios#admin'
   devise_scope :usuario do
     root :to => 'gauchadas#index'
   end
