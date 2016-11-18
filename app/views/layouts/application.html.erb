@@ -34,8 +34,10 @@
           <% end %>
           <h3>UnaGauchada</h3>
 
+          <%if current_usuario!=nil%>
           <%if current_usuario.admin%>
              <%= link_to 'Menu Logros', logro_path, class: 'btn btn-info'%>
+          <% end %>
           <% end %>
         </div>
         <div class="col-xs-9">
