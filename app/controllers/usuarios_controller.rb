@@ -23,4 +23,8 @@ class UsuariosController < ApplicationController
 
   end
 
+  def create
+    redirect_to logros_path(1)
+  end
+
 end

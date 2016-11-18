@@ -11,10 +11,6 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
 
-  def edit
-    super
-  end
-
   private
 
   def sign_up_params
