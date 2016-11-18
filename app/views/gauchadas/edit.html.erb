@@ -19,9 +19,7 @@
 
 <div class="field">
   <%= g.label :vencimiento %><br />
-  <%= g.date_select :vencimiento, :order => [:day, :month, :year],{:use_month_names => ['Enero', 'Febrero',
-    'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre',
-    'Octubre', 'Noviembre','Diciembre']}, required: true, autofocus: true    %>
+  <%= f.date_select :vencimiento, {:order => [:month, :day, :year],:prompt => true, :start_year => Time.now.year, :end_year => 2016} %>
 </div>
 
 <div class="field">
