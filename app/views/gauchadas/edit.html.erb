@@ -25,9 +25,11 @@
   <%= g.label :vencimiento %><br />
   <%= g.date_field :vencimiento,required: true, autofocus: true %>
 </div>-->
-<div class="input-append date datepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
-    <%= g.text_field :vencimiento, 'data-behaviour' => 'datepicker', :disabled => 'disable' %><span class="add-on"><i class="icon-th"></i></span>
-</div>
+<%= g.text_field :vencimiento, 'data-behaviour' => 'datepicker' %>
+
+<script type="text/javascript">
+  $('[data-behaviour~=datepicker]').datepicker();
+</script>
 
 <script type="text/javascript">
   $('.datepicker').datepicker();
