@@ -11,7 +11,7 @@ class GauchadasController < ApplicationController
   end
 
   def edit
-
+    @gauchada = Gauchada.find(params[:id])
   end
 
   def new
