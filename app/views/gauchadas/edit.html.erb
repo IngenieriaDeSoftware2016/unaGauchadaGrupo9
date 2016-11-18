@@ -21,15 +21,10 @@
   <%= g.text_field :localidad,required: true, autofocus: true %>
 </div>
 
-<!--<div class="field">
+<div class="field">
   <%= g.label :vencimiento %><br />
-  <%= g.date_field :vencimiento,required: true, autofocus: true %>
-</div>-->
-<%= g.text_field :vencimiento, 'data-behaviour' => 'datepicker' %>
-
-<script type="text/javascript">
-  $('[data-behaviour~=datepicker]').datepicker();
-</script>
+  <%= g.date_select :vencimiento,required: true, autofocus: true %>
+</div>
 
 <script type="text/javascript">
   $('.datepicker').datepicker();
