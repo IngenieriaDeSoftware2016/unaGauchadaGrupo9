@@ -28,12 +28,13 @@ gem 'hirb'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
-gem 'bootstrap-datetimepicker-rails'
-
 gem 'autoprefixer-rails'
 
 gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails'
 
+#gem 'rails-i18n', '~> 5.0.0' # For 5.0.x
+#gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master' # For 5.x
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x' # For 4.x
 
 gem 'devise'
 gem 'rails_12factor'
