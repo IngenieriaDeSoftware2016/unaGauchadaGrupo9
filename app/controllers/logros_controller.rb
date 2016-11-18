@@ -20,7 +20,7 @@ class LogrosController < ApplicationController
     @logro=Logro.find(params[:id])
     if @logro.nombre!="Politico"
       @logro.destroy
-      redirect_to usuarios_admin_path
+      redirect_to logros_path
     else
       flash[:alert]="No puede borrarse este logro"
       redirect_to :back
@@ -44,7 +44,7 @@ class LogrosController < ApplicationController
          flash[:error]=message
          #flash[:error]= @logro.errors.full_messages.to_sentence
        end
-       redirect_to usuarios_admin_path
+       redirect_to logros_path
    end
 
   def update
@@ -60,7 +60,7 @@ class LogrosController < ApplicationController
         flash[:error]=message
         #flash[:error]= @logro.errors.full_messages.to_sentence
       end
-      redirect_to usuarios_admin_path
+      redirect_to logros_path
     else
       redirect_to :back
     end
