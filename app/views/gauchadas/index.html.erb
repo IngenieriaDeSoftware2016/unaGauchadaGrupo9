@@ -19,7 +19,7 @@
     <td><%= gauchada.descripcion %></td>
     <td><%= gauchada.creacion %></td>
     <td><%= gauchada.vencimiento %></td>
-    <td><%= button_to 'Ver', gauchada_path(gauchada), :class => 'btn btn-info btn-xs'%></td>
+    <td><%= link_to 'Ver', gauchada_path(gauchada), :class => 'button'%></td>
     </tr>
     <% end %>
   </tbody>
