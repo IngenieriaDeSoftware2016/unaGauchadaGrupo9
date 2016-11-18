@@ -33,7 +33,7 @@ class GauchadasController < ApplicationController
   end
   def update
     @gauchada=Gauchada.find(params[:id])
-      if(@gauchada.update(logro_params))
+      if(@gauchada.update(gauchada_params))
         flash[:notice]="Gauchada actualizado"
       else
         message=""
