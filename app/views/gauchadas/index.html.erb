@@ -1,4 +1,8 @@
-
+<%if current_usuario!=nil%>
+<%if current_usuario.admin%>
+   <%= link_to 'Crear', new_gauchada_path, class: 'btn btn-info'%>
+<% end %>
+<% end %>
 <table class="table">
   <thead>
     <tr>
