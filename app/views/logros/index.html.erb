@@ -13,7 +13,7 @@
     <!--<th scope="row"><%= l.id %></th>-->
     <td><%= l.nombre %></td>
     <td><%= l.puntaje %></td>
-    <td><%= link_to 'Editar', edit_logro_path(l), :class => 'button'%></td>
+    <td><%= link_to '<i class="glyphicon glyphicon-th-large"></i> Edit'.html_safe, edit_usuario_registration_path, class: 'btn btn-default'%></td>
     <td><%= link_to 'Borrar', l, method: :delete, :class => 'button'%></td>
     </tr>
     <% end %>
