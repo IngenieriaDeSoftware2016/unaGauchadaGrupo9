@@ -31,6 +31,21 @@ class GauchadasController < ApplicationController
        end
        redirect_to gauchada_path(@gauchada)
   end
+  def update
+    @gauchada=Gauchada.find(params[:id])
+      if(@gauchada.update(logro_params))
+        flash[:notice]="Gauchada actualizado"
+      else
+        message=""
+        @gauchada.errors.full_messages.each do |msg|
+          message=message+msg+"\n"
+        end
+        flash[:error]=message
+        #flash[:error]= @logro.errors.full_messages.to_sentence
+      end
+      redirect_to gauchadas_path(@gauchada)
+  end
+
 
 private
 
