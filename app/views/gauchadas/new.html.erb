@@ -27,7 +27,7 @@
     'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre',
     'Octubre', 'Noviembre','Diciembre'],:order => [:day, :month, :year],
     :prompt => true, :start_year => Time.now.year, :end_year => Time.now.year+5,
-    default: 30.days.from_now} %>
+    default: 30.days.from_now,required: true} %>
 </div>
 
 <div class="field">
