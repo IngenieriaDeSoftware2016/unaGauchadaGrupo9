@@ -1,5 +1,5 @@
 class GauchadasController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show]
+  before_action :authenticate_user!, except: [:show]
   def index
 
   end
