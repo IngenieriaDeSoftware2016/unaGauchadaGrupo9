@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/under_construction' , to: 'mains#under_construction'
 
 
-  devise_for :usuarios
+  devise_for :usuarios, :controllers => { registrations: 'registrations' }
 
   resources :usuarios
   resources :logros
