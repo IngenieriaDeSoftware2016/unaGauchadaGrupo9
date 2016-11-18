@@ -33,6 +33,10 @@
             <%= image_tag "logo.png", title: "Logo", class: "logo" %>
           <% end %>
           <h3>UnaGauchada</h3>
+
+          <%if current_usuario.admin%>
+             <%= link_to 'Menu Logros', logro_path, class: 'btn btn-info'%>
+          <% end %>
         </div>
         <div class="col-xs-9">
           <%= yield %>
