@@ -13,9 +13,10 @@
 </div>
 
 
-  <div class="actions">
+<!--  <div class="actions">
     <%= l.submit "Crear" %>
   </div>
-<% end %>
-
-<%= link_to "Volver", :back %>
+<% end %> -->
+<%= button_to '<i class="glyphicon glyphicon-ok">Crear</i>'.html_safe, logro_path(l), class: 'btn btn-primary'%>
+<%= button_to 'Volver'.html_safe, logro_path(l), class: 'btn btn-primary'%>
+<!--<%= link_to "Volver", :back %>-->
