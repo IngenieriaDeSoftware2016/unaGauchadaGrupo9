@@ -35,6 +35,6 @@ class GauchadasController < ApplicationController
 private
 
  def gauchada_params
-    params.require(:gauchada).permit(:nombre, :descripcion, :localidad, :vencimiento)
+    params.require(:gauchada).permit(:id_creador, :creacion, :nombre, :descripcion, :localidad, :vencimiento)
  end
 end
