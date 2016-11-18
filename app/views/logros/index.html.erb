@@ -1,2 +1,22 @@
-<h1>Logro#index</h1>
-<p>Find me in app/views/logro/index.html.erb</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Puntaje</th>
+      <th>Editar</th>
+      <th>Borrar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Logro.all.each do |l| %>
+    <tr>
+    <!--<th scope="row"><%= l.id %></th>-->
+    <td><%= l.nombre %></td>
+    <td><%= l.puntaje %></td>
+    <td><%= link_to 'Editar', edit_logro_path(l), :class => 'button'%></td>
+    <td><%= link_to 'Borrar', l, method: :delete, :class => 'button'%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Crear', new_logro_path, :class => 'button'%>

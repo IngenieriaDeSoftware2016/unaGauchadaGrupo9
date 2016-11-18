@@ -1,6 +1,6 @@
 class UsuariosController < ApplicationController
   #before_filter :admin
-  before_filter :is_admin, only: [:admin, :show]
+  before_filter :is_admin, only: [:admin]
 
   def index
   end
@@ -21,8 +21,9 @@ class UsuariosController < ApplicationController
   def is_admin
     if !current_usuario.admin?
       flash[:alert]="Acceso denegado"
-      redirect_to usuarios_path
+      redirect_to logros_path
     end
+    redirect_to logros_path
     #redirect_to "/", alert: 'You dont have enough permissions to be here' unless current_usuario.admin?
   end
 

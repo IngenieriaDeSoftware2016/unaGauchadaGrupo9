@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :gauchadas
   resources :mains
   devise_scope :usuario do
-    root :to => 'devise/sessions#new'
+    root :to => 'gauchadas#index'
   end
   get '/usuarios/admin', to:'usuarios#admin'
 
