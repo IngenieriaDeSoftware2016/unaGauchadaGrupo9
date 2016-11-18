@@ -10,6 +10,11 @@ class RegistrationsController < Devise::RegistrationsController
     super
   end
 
+
+  def update
+    super
+  end
+
   private
 
   def sign_up_params
