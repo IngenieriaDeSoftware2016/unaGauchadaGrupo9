@@ -19,15 +19,6 @@ class UsuariosController < ApplicationController
     #end
   end
 
-  def is_admin
-    if !current_usuario.admin?
-      flash[:alert]="Acceso denegado"
-      redirect_to gauchadas_path
-    end
-    redirect_to logros_path
-    #redirect_to "/", alert: 'You dont have enough permissions to be here' unless current_usuario.admin?
-  end
-
   def default
 
   end
