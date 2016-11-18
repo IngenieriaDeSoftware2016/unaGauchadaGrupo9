@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20161106220615) do
   create_table "gauchadas", force: :cascade do |t|
     t.integer  "id_creador"
     t.string   "descripcion"
+    t.string   "nombre"
     t.datetime "creacion"
     t.datetime "vencimiento"
     t.datetime "created_at",  null: false
