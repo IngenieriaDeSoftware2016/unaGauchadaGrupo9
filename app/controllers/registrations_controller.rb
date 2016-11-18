@@ -130,7 +130,8 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def account_update_params
-    devise_parameter_sanitizer.sanitize(:account_update)
+    allow = [:email, :password, :password_confirmation, :nombre,:edad ,:rol,:telefono,:localidad,:puntaje]
+    params.require(resource_name).permit(allow)
   end
 
   def translation_scope
