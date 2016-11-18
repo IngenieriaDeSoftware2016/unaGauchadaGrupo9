@@ -17,6 +17,6 @@
     <%= l.submit "Crear" %>
   </div>
 <% end %> -->
-<%= button_to '<i class="glyphicon glyphicon-ok">Crear</i>'.html_safe, logro_path(l), class: 'btn btn-primary'%>
+<%= button_to '<i class="glyphicon glyphicon-ok">Crear</i>'.html_safe, l, method: :put, class: 'btn btn-primary'%>
 <%= link_to 'Volver'.html_safe, :back, class: 'btn btn-primary'%>
 <!--<%= link_to "Volver", :back %>-->
