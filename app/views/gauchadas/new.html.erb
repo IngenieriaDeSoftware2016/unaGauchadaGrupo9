@@ -1,0 +1,34 @@
+<h2>Crear Gauchada</h2>
+
+<%= form_for(@gauchada) do |g| %>
+
+<div class="field">
+  <%= g.label :nombre %><br />
+  <%= g.text_field :nombre,required: true, autofocus: true %>
+</div>
+
+<div class="field">
+  <%= g.label :descripcion %><br />
+  <%= g.text_field :descripcion,required: true, autofocus: true %>
+</div>
+
+<div class="field">
+  <%= g.label :localidad %><br />
+  <%= g.text_field :localidad,required: true, autofocus: true %>
+</div>
+
+<div class="field">
+  <%= g.label :vencimiento %><br />
+  <%= g.date_field :vencimiento,required: true, autofocus: true %>
+</div>
+
+<div class="field">
+  <%= g.hidden_field :creador_id, :value => current_usuario.id%>
+</div>
+
+  <div class="actions">
+    <%= g.submit "Crear" %>
+  </div>
+<% end %>
+
+<%= link_to "Volver", :back %>
