@@ -23,7 +23,7 @@
 
 <div class="field">
   <%= g.label :vencimiento %><br />
-  <%= g.date_select :vencimiento,required: true, autofocus: true %>
+  <%= g.date_select :vencimiento, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre']},required: true, autofocus: true %>
 </div>
 
 <script type="text/javascript">
