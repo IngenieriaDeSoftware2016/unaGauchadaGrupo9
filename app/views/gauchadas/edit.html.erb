@@ -21,10 +21,17 @@
   <%= g.text_field :localidad,required: true, autofocus: true %>
 </div>
 
-<div class="field">
+<!--<div class="field">
   <%= g.label :vencimiento %><br />
   <%= g.date_field :vencimiento,required: true, autofocus: true %>
+</div>-->
+<div class="input-append date datepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+    <%= g.text_field :vencimiento, 'data-behaviour' => 'datepicker', :disabled => 'disable' %><span class="add-on"><i class="icon-th"></i></span>
 </div>
+
+<script type="text/javascript">
+  $('.datepicker').datepicker();
+</script>
 
 <div class="field">
   <%= g.hidden_field :usuario_id, :value => current_usuario.id%>
