@@ -23,8 +23,13 @@
 </div>
 
 <div class="field">
-  <%= g.hidden_field :creador_id, :value => current_usuario.id%>
+  <%= g.hidden_field :id_creador, :value => current_usuario.id%>
 </div>
+
+<div class="field">
+  <%= g.hidden_field :creacion, :value => Date.current%>
+</div>
+
 
   <div class="actions">
     <%= g.submit "Crear" %>
