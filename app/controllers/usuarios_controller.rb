@@ -23,8 +23,5 @@ class UsuariosController < ApplicationController
 
   end
 
-  def create
-    return logros_path
-  end
 
 end
