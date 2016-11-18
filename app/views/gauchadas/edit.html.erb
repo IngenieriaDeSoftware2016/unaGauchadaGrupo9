@@ -1,9 +1,5 @@
 <h2>Editar Gauchada</h2>
 
-
-
-
-
 <%= form_for(@gauchada) do |g| %>
 
 <div class="field">
@@ -25,10 +21,6 @@
   <%= g.label :vencimiento %><br />
   <%= g.date_select :vencimiento, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre']},required: true, autofocus: true %>
 </div>
-
-<script type="text/javascript">
-  $('.datepicker').datepicker();
-</script>
 
 <div class="field">
   <%= g.hidden_field :usuario_id, :value => current_usuario.id%>
