@@ -71,7 +71,6 @@ class LogrosController < ApplicationController
       flash[:alert]="Acceso denegado"
       return gauchadas_path
     end
-    return logros_path
     #redirect_to "/", alert: 'You dont have enough permissions to be here' unless current_usuario.admin?
   end
 
