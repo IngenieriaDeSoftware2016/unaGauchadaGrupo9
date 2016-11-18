@@ -3,3 +3,6 @@ Nombre:<p><i><%=@gauchada.nombre %></i></p>
 Descripcion:<p><i><%=@gauchada.descripcion %></i></p>
 Fecha de creacion:<p><i><%=@gauchada.creacion %></i></p>
 Fecha de vencimiento<p><i><%=@gauchada.vencimiento %></i></p>
+<%if current_usuario.id==gauchada.usuario_id%>
+   <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_gauchada_path(@gauchada), class: 'btn btn-warning'%></td>
+<% end %>
