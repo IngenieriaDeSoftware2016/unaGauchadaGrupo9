@@ -1,5 +1,5 @@
 class LogrosController < ApplicationController
-  prepend_before_action :is_admin
+  before_action :is_admin , if :authenticate_usuario!
   def index
     @logros=Logro.all
   end
