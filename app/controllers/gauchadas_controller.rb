@@ -1,5 +1,7 @@
 class GauchadasController < ApplicationController
-  skip_before_filter :authenticate_user!#, :only => :gauchadas_path
+  #skip_before_filter :authenticate_user!#, :only => :gauchadas_path
+  skip_before_filter :authenticate_user!, :only => :show
+  before_filter      :authenticate_user!, :only => :show
   def index
 
   end
