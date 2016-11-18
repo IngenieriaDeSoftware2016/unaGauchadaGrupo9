@@ -4,7 +4,6 @@
 <table class="table">
   <thead>
     <tr>
-      <th>#</th>
       <th>Usuario</th>
       <th>Descrpcion</th>
       <th>Creada</th>
@@ -15,7 +14,6 @@
   <tbody>
     <% Gauchada.all.each do |gauchada| %>
     <tr>
-    <th scope="row">1</th>
     <%u=Usuario.find(gauchada.id_creador)%>
     <td><%= u.nombre %></td>
     <td><%= gauchada.descripcion %></td>
