@@ -1,5 +1,5 @@
 class LogrosController < ApplicationController
-  before_action :is_admin , if :authenticate_usuario!
+  before_action :is_admin , if => :authenticate_usuario!
   def index
     @logros=Logro.all
   end
