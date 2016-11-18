@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20161106220615) do
   enable_extension "plpgsql"
 
   create_table "gauchadas", force: :cascade do |t|
-    t.integer  "id_creador"
+    t.integer  "usuario_id"
     t.string   "descripcion"
     t.string   "nombre"
     t.datetime "creacion"
