@@ -69,7 +69,7 @@ class LogrosController < ApplicationController
   def is_admin
     if !current_usuario.admin?
       flash[:alert]="Acceso denegado"
-      return gauchadas_path
+      redirect_to gauchadas_path
     end
     #redirect_to "/", alert: 'You dont have enough permissions to be here' unless current_usuario.admin?
   end
