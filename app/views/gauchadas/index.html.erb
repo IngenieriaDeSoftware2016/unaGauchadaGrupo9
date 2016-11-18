@@ -17,7 +17,7 @@
     <%u=Usuario.find(gauchada.usuario_id)%>
     <td><%= u.nombre %></td>
     <td><%= gauchada.descripcion %></td>
-    <td><%= gauchada.creacion, :format => "%b %e, %Y", :locale => 'spa' %></td>
+    <td><%= l(gauchada.creacion, format: '%d de %B de %Y') %></td>
     <td><%= gauchada.vencimiento.strftime("%d de %B de %Y") %></td>
     <td><%= link_to 'Ver', gauchada_path(gauchada), class: 'btn btn-info btn-xs'%></button></td>
     </tr>
