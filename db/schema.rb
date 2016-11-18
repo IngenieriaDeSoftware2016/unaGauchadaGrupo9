@@ -17,18 +17,18 @@ ActiveRecord::Schema.define(version: 20161106220615) do
   enable_extension "plpgsql"
 
   create_table "gauchadas", force: :cascade do |t|
-    t.integer  "usuario_id"
-    t.string   "descripcion"
-    t.string   "nombre"
-    t.datetime "creacion"
-    t.datetime "vencimiento"
+    t.integer  "usuario_id", null: false
+    t.string   "descripcion", null: false
+    t.string   "nombre", null: false
+    t.datetime "creacion", null: false
+    t.datetime "vencimiento", null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "logros", force: :cascade do |t|
-    t.integer  "puntaje"
-    t.string   "nombre"
+    t.integer  "puntaje", null: false
+    t.string   "nombre", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
