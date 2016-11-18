@@ -14,7 +14,7 @@
   <tbody>
     <% Gauchada.all.each do |gauchada| %>
     <tr>
-    <%u=Usuario.find(gauchada.id_creador)%>
+    <%u=Usuario.find(gauchada.usuario_id)%>
     <td><%= u.nombre %></td>
     <td><%= gauchada.descripcion %></td>
     <td><%= gauchada.creacion %></td>
