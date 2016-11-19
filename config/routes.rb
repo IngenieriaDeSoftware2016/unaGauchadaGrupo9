@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/logros/new' , to: 'logros#new'
   get '/logros/show' , to: 'logros#show'
   get '/under_construction' , to: 'mains#under_construction'
-
+  get '/buscar' , to: 'mains#search'
 
   devise_for :usuarios, :controllers => { registrations: 'registrations' }
 

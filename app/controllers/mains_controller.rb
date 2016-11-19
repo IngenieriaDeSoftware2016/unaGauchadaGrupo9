@@ -4,4 +4,8 @@ class MainsController < ApplicationController
 
   def under_construction
   end
+
+  def search
+  end
+
 end
