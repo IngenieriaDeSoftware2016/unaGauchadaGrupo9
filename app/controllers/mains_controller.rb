@@ -7,7 +7,7 @@ class MainsController < ApplicationController
 
   def search
     if(params[:localidad]&&params[:palabra])
-      @gauchadas=Gauchada.where("localidad ilike 'la Plata'").where("descripcion ilike ?", "%" + 'TEST' + "%")
+      @gauchadas=Gauchada.where("localidad ilike 'la Plata'").where("descripcion ilike ?", "%" + params[:palabra] + "%")
     elsif(params[:localidad]&&!params[:palabra])
       @gauchadas=Gauchada.where("localidad ilike 'la Plata'")
     elsif(!params[:localidad]&&params[:palabra])
