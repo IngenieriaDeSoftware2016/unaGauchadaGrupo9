@@ -22,7 +22,5 @@ class MainsController < ApplicationController
      else
        self.all
      end
-       self.all
-     end
     end
 end
