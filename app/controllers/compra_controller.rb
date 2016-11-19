@@ -16,4 +16,5 @@ class CompraController < ApplicationController
   def edit
     @compra = Compra.find(params[:id])
   end
+
 end
