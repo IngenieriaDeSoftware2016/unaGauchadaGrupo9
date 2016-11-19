@@ -2,7 +2,7 @@
   <thead>
     <tr>
       <th>Usuario</th>
-      <th>Descrpcion</th>
+      <th>Nombre</th>
       <th>Creada</th>
       <th>Vencimiento</th>
       <th>Abrir</th>
@@ -13,7 +13,7 @@
     <tr>
     <%u=Usuario.find(gauchada.usuario_id)%>
     <td><%= u.nombre %></td>
-    <td><%= gauchada.descripcion %></td>
+    <td><%= gauchada.nombre %></td>
     <td><%= l(gauchada.creacion, format: '%d de %B de %Y') %></td>
     <td><%= gauchada.vencimiento.strftime("%d de %B de %Y") %></td>
     <td><%= link_to 'Ver', gauchada_path(gauchada), class: 'btn btn-info btn-xs'%></button></td>
