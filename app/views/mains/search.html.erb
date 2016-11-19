@@ -15,7 +15,7 @@
     <td><%= u.nombre %></td>
     <td><%= gauchada.nombre %></td>
     <td><%= l(gauchada.creacion, format: '%d de %B de %Y') %></td>
-    <td><%= gauchada.vencimiento.strftime("%d de %B de %Y") %></td>
+    <td><%= l(gauchada.vencimiento, format: '%d de %B de %Y') %></td>
     <td><%= link_to 'Ver', gauchada_path(gauchada), class: 'btn btn-info btn-xs'%></button></td>
     </tr>
     <% end %>
