@@ -1,7 +1,7 @@
 <h1>Gauchada</h1>
 Nombre:<p><i><%=@gauchada.nombre %></i></p>
 Descripcion:<p><i><%=@gauchada.descripcion %></i></p>
-Solicitante:<p><i><%=Usuario.find(@gauchada.usuario_id)%></i></p>
+Solicitante:<p><i><%=Usuario.find(@gauchada.usuario_id).nombre%></i></p>
 Fecha de creacion:<p><i><%=@gauchada.creacion %></i></p>
 Fecha de vencimiento<p><i><%=@gauchada.vencimiento %></i></p>
 <%if current_usuario.id==@gauchada.usuario_id%>
