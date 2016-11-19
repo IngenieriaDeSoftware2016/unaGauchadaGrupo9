@@ -9,8 +9,10 @@ class CompraController < ApplicationController
   end
 
   def new
+    @compra = Compra.new
   end
 
   def edit
   end
+
 end
