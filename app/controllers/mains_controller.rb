@@ -6,8 +6,8 @@ class MainsController < ApplicationController
   end
 
   def search
-    @gauchadas.filtered_by_key_word(:palabra).filtered_by_localidad(:localidad);
-    
+    @gauchadas.filtered_by_key_word(params[:palabra]).filtered_by_localidad(params[:localidad]);
+
   end
 
   private
