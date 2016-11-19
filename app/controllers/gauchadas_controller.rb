@@ -46,20 +46,6 @@ class GauchadasController < ApplicationController
       redirect_to gauchadas_path(@gauchada)
   end
 
-
-  def filtered
-     gauchada = Gauchada.arel_table
-     if params[:palabra] && params[:localidad]
-       self.where("descripcion like '?%' ", params[:palabra]).where("localidad like '?%' ", params[:localidad])
-     elsif params[:palabra] && !params[:localidad]
-       self.where("descripcion like '?%' ", params[:palabra])
-     elsif !params[:palabra] && params[:localidad]
-       self.where("localidad like '?%' ", params[:localidad])
-     else
-       self.all
-     end
-  end
-  
 private
 
  def gauchada_params
