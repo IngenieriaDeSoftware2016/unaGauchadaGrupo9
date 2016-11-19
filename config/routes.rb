@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'postulante/index'
+
+  get 'postulante/show'
+
   get '/logros/new' , to: 'logros#new'
   get '/logros/show' , to: 'logros#show'
   get '/under_construction' , to: 'mains#under_construction'
