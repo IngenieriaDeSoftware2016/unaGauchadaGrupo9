@@ -53,7 +53,7 @@ private
     params.require(:gauchada).permit(:usuario_id, :creacion, :nombre, :descripcion, :localidad, :vencimiento)
  end
 
- def self.filtered
+ def filtered
     gauchada = Gauchada.arel_table
     if params[:palabra] && params[:localidad]
       self.where("descripcion like '?%' ", params[:palabra]).where("localidad like '?%' ", params[:localidad])
