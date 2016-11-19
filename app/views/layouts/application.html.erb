@@ -36,12 +36,13 @@
           </br>
           </br>
           </br>
+          <h5>Buscar</h5>
           <%= form_tag buscar_path, method: :get do %>
           <div class="form-group">
-            <%= text_field_tag :palabra, params[:concept], class: "form-control", placeholder: "Palabra Clave" %>
+            <%= text_field_tag :palabra, params[:palabra], class: "form-control", placeholder: "Palabra Clave" %>
           </div>
           <div class="form-group">
-            <%= text_field_tag :localidad, params[:concept], class: "form-control", placeholder: "Localidad" %>
+            <%= text_field_tag :localidad, params[:localidad], class: "form-control", placeholder: "Localidad" %>
           </div>
           <!--<div class="form-group">
             <%= select_tag :category_id, options_from_collection_for_select(Category.all, "id", "name", params[:category_id]), prompt: "Categoría", class: "form-control" %>
