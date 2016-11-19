@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'compra/index'
+
+  get 'compra/show'
+
+  get 'compra/create'
+
+  get 'compra/new'
+
+  get 'compra/edit'
+
   get 'postulante/index'
 
   get 'postulante/show'
