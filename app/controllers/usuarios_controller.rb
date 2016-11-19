@@ -6,8 +6,7 @@ class UsuariosController < ApplicationController
   end
 
   def show
-
-  end
+    @usuario = Usuario.find(current_usuario.id)
 
   def edit
   end
