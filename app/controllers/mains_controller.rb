@@ -6,26 +6,23 @@ class MainsController < ApplicationController
   end
 
   def search
-    @gauchadas.filtered_by_key_word(params[:palabra]).filtered_by_localidad(params[:localidad]);
+    @gauchadas.filtered;
 
   end
 
   private
-  def self.filtered_by_key_word(opts = {})
+  def self.filtered
      gauchada = Gauchada.arel_table
-     if params[:palabra]
+     if params[:palabra] && params[:localidad]
+       self.where("descripcion like '?%' ", params[:palabra]).where("localidad like '?%' ", params[:localidad])
+     elsif params[:palabra] && !params[:localidad]
        self.where("descripcion like '?%' ", params[:palabra])
+     elsif !params[:palabra] && params[:localidad]
+       self.where("localidad like '?%' ", params[:localidad])
      else
        self.all
      end
-   end
-   def self.filtered_by_localidad(opts = {})
-     gauchada = Gauchada.arel_table
-     if params[:localidad]
-       self.where("descripcion like '?%' ", params[:localidad])
-     else
        self.all
      end
     end
-
 end
