@@ -6,8 +6,8 @@ class UsuariosController < ApplicationController
   end
 
   def show
-    @usuario = current_usuario
-    redirect_to @usuario
+    @usuario = Usuario.find(current_usuario.id)
+    redirect_to usuario_path
   end
 
   def edit
