@@ -12,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @gauchadas do |gauchada| %>
+    <% for(@gauchadas) do |gauchada| %>
     <tr>
     <%u=Usuario.find(gauchada.usuario_id)%>
     <td><%= u.nombre %></td>
