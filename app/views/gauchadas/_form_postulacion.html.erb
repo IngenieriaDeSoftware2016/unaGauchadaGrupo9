@@ -7,7 +7,10 @@
 </div>
 
 
-  <button type="button" class="btn btn-primary">Postularme!
-    <%= p.submit "Crear" %>
-  </button>
+  <!--<button type="button" class="btn btn-primary">Postularme!
+    <%= p.submit %>
+  </button>-->
+  <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+ <i class="icon-ok icon-white"></i> Postularme!
+<% end %>
 <% end %>
