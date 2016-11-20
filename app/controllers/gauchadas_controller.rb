@@ -48,7 +48,6 @@ class GauchadasController < ApplicationController
 
   def postulantes
     @gauchada = Gauchada.find(params[:id])
-    redirect_to gauchada_path(24)
   end
 
   def postulacion
