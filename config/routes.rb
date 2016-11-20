@@ -12,7 +12,10 @@ Rails.application.routes.draw do
 
   get "gauchadas/postulacion" => 'gauchadas#postulacion', :as => :postulacion
 
-  get "gauchadas/:id/postulantes" => 'gauchadas#postulantes', :as => :gauchadas_postulantes
+  #get "gauchadas/:id/postulantes" => 'gauchadas#postulantes', :as => :gauchadas_postulantes
+  controller :gauchadas do
+    get 'gauchadas/:id/postulantes' => :postulantes
+  end
 
   get '/logros/new' , to: 'logros#new'
   get '/logros/show' , to: 'logros#show'
