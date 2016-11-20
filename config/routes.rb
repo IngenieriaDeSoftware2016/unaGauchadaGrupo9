@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'compra/index'
+  get 'compra/index' , to: 'compras#index'
 
-  get 'compra/show'
+  get 'compra/show' , to: 'compras#show'
 
-  get 'compra/create'
+  get 'compra/create' , to: 'compras#create'
 
-  get 'compra/new'
+  get 'compra/new' , to: 'compras#new'
 
-  get 'compra/edit'
+  get 'compra/edit' to: 'compras#edit'
 
   get "gauchadas/postulacion" => 'gauchadas#postulacion', :as => :postulacion
 
