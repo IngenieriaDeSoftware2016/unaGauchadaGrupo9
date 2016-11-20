@@ -52,7 +52,7 @@ class GauchadasController < ApplicationController
     format.js
   end
   def postulantes
-    @gauchada = params[:gauchada_id]
+    @gauchada = Gauchada.find(params[:id])
   end
 end
 
