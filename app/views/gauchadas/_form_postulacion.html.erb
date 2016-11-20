@@ -1,0 +1,17 @@
+<%@postulante=Postulante.new%>
+<%= form_for(@postulante) do |p| %>
+
+<div class="field">
+  <%= g.label :nombre %><br />
+  <%= g.text_field :usuario_id,required: true, autofocus: true %>
+</div>
+
+<div class="field">
+  <%= g.hidden_field :creacion, :value => Time.now%>
+</div>
+
+
+  <div class="actions">
+    <%= g.submit "Crear" %>
+  </div>
+<% end %>
