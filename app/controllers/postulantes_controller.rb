@@ -1,4 +1,4 @@
-class PostulanteController < ApplicationController
+class PostulantesController < ApplicationController
 
   def new
     @postulante=Postulante.new
