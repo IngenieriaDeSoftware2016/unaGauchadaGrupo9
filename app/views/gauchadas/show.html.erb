@@ -1,6 +1,6 @@
 <h1>Gauchada</h1>
 
-<%if(!@gauchada.postulante_ids.include?(current_usuario.postulante_ids)&&@gauchada.usuario_id!=current_usuario.id)%>
+<%if(!(@gauchada.postulante_ids & current_usuario.postulante_ids).empty?)&&@gauchada.usuario_id!=current_usuario.id)%>
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   Postularme
 </button>
