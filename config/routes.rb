@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   get '/logros/new' , to: 'logros#new'
-  get '/postulantes/id/aceptar' , to: 'postulantes#aceptar', :as => :aceptar_postulante
+  get '/postulantes/:id/aceptar' , to: 'postulantes#aceptar', :as => :aceptar_postulante
   get '/logros/show' , to: 'logros#show'
   get '/under_construction' , to: 'mains#under_construction'
   get '/buscar' , to: 'mains#search'
