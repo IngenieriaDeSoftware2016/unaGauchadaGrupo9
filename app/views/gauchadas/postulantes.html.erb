@@ -6,6 +6,7 @@
     <div class="text-under-thumbnail">
       <h4>Nombre: <%=Usuario.find(p.usuario_id).nombre%></h4>
       <p>Razon: <%=p.razon%></p>
+      <%= link_to '<i class="glyphicon glyphicon-ok"></i>'.html_safe, aceptar_postulante_path(p), class: 'btn btn-success'%>
     </div>
   </a>
 </div>
