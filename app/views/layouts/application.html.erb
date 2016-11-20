@@ -47,11 +47,7 @@
           <%= submit_tag "Buscar", name: nil, class: "btn btn-primary btn-md" %>
           <% end %>
 
-          <%if current_usuario!=nil%>
-          <%if current_usuario.admin%>
-             <%= link_to 'Menu Logros', logros_path, class: 'btn btn-info'%>
-          <% end %>
-          <% end %>
+          
         </div>
         <div class="col-xs-9">
           <%= yield %>
