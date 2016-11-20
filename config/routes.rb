@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   devise_for :usuarios, :controllers => { registrations: 'registrations' }
 
   resources :usuarios
+  resources :compras
   resources :postulantes
   resources :logros
   resources :gauchadas
