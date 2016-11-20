@@ -1,7 +1,7 @@
 class PostulanteController < ApplicationController
 
   def new
-
+    @postulante=Postulante.new
   end
 
 
