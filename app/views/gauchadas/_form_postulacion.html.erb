@@ -5,6 +5,17 @@
   <%= p.label :"Cuenta porque eres el mejor para resolver esta gauchada" %><br />
   <%= p.text_area :razon,required: true, autofocus: true %>
 </div>
+<div class="field">
+  <%= p.hidden_field :usuario_id, :value => current_usuario.id%>
+</div>
+
+<div class="field">
+  <%= p.hidden_field :gauchada_id, :value => @gauchada.id%>
+</div>
+
+<div class="field">
+  <%= p.hidden_field :estado, :value => false%>
+</div>
 
 
   <!--<button type="button" class="btn btn-primary">Postularme!

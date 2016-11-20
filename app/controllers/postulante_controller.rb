@@ -6,9 +6,7 @@ class PostulanteController < ApplicationController
 
 
   def create
-      @postulante = @gauchada.postulante.create
-      @postulante.usuario_id=current_usuario
-      @postulante.estado=false
+      @postulante = Postulante.new(postulante_params)
       if(@postulante.save)
         flash[:notice]="Te has postulado correctamente"
       else
@@ -34,4 +32,10 @@ class PostulanteController < ApplicationController
   def show
 
   end
+  private
+
+   def postulante_params
+      params.require(:gauchada).permit(:usuario_id, :gauchada_id, :razon, :estado)
+   end
+
 end
