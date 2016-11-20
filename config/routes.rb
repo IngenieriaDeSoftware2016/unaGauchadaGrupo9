@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   #get "gauchadas/:id/postulantes" => 'gauchadas#postulantes', :as => :gauchadas_postulantes
   controller :gauchadas do
-    get 'gauchadas/:id/postulantes' => :postulantes
+    get 'gauchadas/:id/postulantes' => :postulantes, :as => :gauchadas_postulantes
   end
 
   get '/logros/new' , to: 'logros#new'
