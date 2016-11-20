@@ -18,7 +18,7 @@
         <h4 class="modal-title" id="myModalLabel">Postulacion</h4>
       </div>
       <div class="modal-body">
-        <% for(@gauchada) |gauchada| %>
+        <% for(@gauchada) do |gauchada| %>
         <%= render 'form_postulacion', :post => gauchada %>
         <% end %>
       </div>
