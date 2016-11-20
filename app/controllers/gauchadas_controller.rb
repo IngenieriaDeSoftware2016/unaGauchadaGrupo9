@@ -51,6 +51,9 @@ class GauchadasController < ApplicationController
     format.html
     format.js
   end
+  def postulantes
+
+  end
 end
 
 private

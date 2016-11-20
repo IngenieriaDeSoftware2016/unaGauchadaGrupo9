@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get "gauchadas/postulacion" => 'gauchadas#postulacion', :as => :postulacion
 
+  get "gauchadas/postulantes" => 'gauchadas#postulantes', :as => :gauchadas_postulantes
+
   get '/logros/new' , to: 'logros#new'
   get '/logros/show' , to: 'logros#show'
   get '/under_construction' , to: 'mains#under_construction'

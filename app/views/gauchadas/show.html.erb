@@ -3,7 +3,7 @@
     Editar:
    <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_gauchada_path(@gauchada), class: 'btn btn-warning'%>
    Ver Postulantes
-   <%= link_to '<i class="glyphicon glyphicon-th-list"></i>'.html_safe, postulantes_path, gauchada: @gauchada, class: 'btn btn-success'%>
+   <%= link_to '<i class="glyphicon glyphicon-th-list"></i>'.html_safe, gauchadas_postulantes_path(@gauchada), class: 'btn btn-success'%>
 <% end %>
 <%if((@gauchada.postulante_ids & current_usuario.postulante_ids).empty? && @gauchada.usuario_id!=current_usuario.id)%>
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
