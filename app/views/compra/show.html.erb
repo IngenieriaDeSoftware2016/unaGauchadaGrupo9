@@ -1,2 +1,9 @@
-<h1>Compra#show</h1>
-<p>Find me in app/views/compra/show.html.erb</p>
+<h1>PERFIL</h1>
+
+precio unitario por credito:<p><i><%=@compra.precio_unitario %></i></p>
+
+cantidad de puntos a comprar:<p><i><%=@compra.cantidad_puntos %></i></p>
+
+precio total:<p><i><%=@compra.precio_total%></i></p>
+
+<%= link_to 'Volver', :back, class: 'btn btn-info'%>

@@ -1,2 +1,30 @@
-<h1>Compra#new</h1>
-<p>Find me in app/views/compra/new.html.erb</p>
+	<h1> Crear compra </h1>
+
+
+  <%= form_for(@compra) do |c| %>
+
+  <div class="field">
+    <%= c.label :precio_unitario  %><br />
+    <%= c.text_field :precio_unitario,required: true, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= c.label :precio_total %><br />
+    <%= c.text_field :precio_total,required: true, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= c.hidden_field :id_usuario, :value => current_usuario.id%>
+  </div>
+
+  <div class="field">
+    <%= c.label :cantidad_puntos %><br />
+    <%= c.text_field :cantidad_puntos,required: true, autofocus: true %>
+  </div>
+
+    <div class="actions">
+      <%= c.submit "Crear" %>
+    </div>
+  <% end %>
+
+  <%= link_to "Volver", :back %>
