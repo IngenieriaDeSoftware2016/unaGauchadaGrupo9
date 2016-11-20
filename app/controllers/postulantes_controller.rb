@@ -27,7 +27,7 @@ class PostulantesController < ApplicationController
   def aceptar
     @postulante = Postulantes.find(params[:id])
     @postulante.estado=true
-    #Gauchada.find(@postulante.gauchada_id).estado="en proceso"
+    Gauchada.find(@postulante.gauchada_id).estado="en proceso"
     redirect_to gauchada_path(@postulante.gauchada_id)
   end
 
