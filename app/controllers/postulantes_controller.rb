@@ -36,7 +36,7 @@ class PostulantesController < ApplicationController
   private
 
    def postulante_params
-      params.require(:gauchada).permit(:usuario_id, :gauchada_id, :razon, :estado)
+      params.require(:postulante).permit(:usuario_id, :gauchada_id, :razon, :estado)
    end
 
 end
