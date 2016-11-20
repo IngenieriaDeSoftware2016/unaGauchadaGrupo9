@@ -28,7 +28,8 @@ class PostulantesController < ApplicationController
     @postulante = Postulante.find(params[:id])
     @postulante.estado=true
     @postulante.save
-    @gauchada=Gauchada.find(@postulante.gauchada_id).estado="en proceso"
+    @gauchada=Gauchada.find(@postulante.gauchada_id)
+    @gauchada.estado="en proceso"
     @gauchada.save
     redirect_to gauchada_path(@postulante.gauchada_id)
   end
