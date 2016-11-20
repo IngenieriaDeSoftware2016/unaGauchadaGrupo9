@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'compra/edit'
 
+  get "gauchadas/postulacion" => 'gauchadas#postulacion', :as => :postulacion
+
   get '/logros/new' , to: 'logros#new'
   get '/logros/show' , to: 'logros#show'
   get '/under_construction' , to: 'mains#under_construction'

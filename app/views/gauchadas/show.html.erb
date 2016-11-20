@@ -1,6 +1,8 @@
 <h1>Gauchada</h1>
+<div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
 <%if(!@gauchada.postulante_ids.include?(current_usuario.id))%>
-   <%= link_to 'Postularme', postulantes_path ,:method=> :post, class: 'btn btn-success'%>
+   <!--<%= link_to 'Postularme', postulantes_path ,:method=> :post, class: 'btn btn-success'%>-->
+   <%= link_to 'Postularme', postulacion_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}  %>
 <%else%>
   <!--<%= link_to 'Postularme', postulante_path ,disabled: !department.deletable?,class: 'btn btn-success'%>-->
   <%= link_to 'Postularme', postulante_path ,disabled: true,class: 'btn btn-success'%>

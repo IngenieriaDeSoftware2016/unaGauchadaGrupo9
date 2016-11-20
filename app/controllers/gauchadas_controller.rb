@@ -46,6 +46,13 @@ class GauchadasController < ApplicationController
       redirect_to gauchadas_path(@gauchada)
   end
 
+  def postulacion
+  respond_to do |format|
+    format.html
+    format.js
+  end
+end
+
 private
 
  def gauchada_params
