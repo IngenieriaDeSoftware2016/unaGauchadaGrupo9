@@ -1,5 +1,5 @@
 <h1>Gauchada</h1>
-<%if(!Gauchada.postulantes.ids.include?(current_usuario.id))%>
+<%if(!Gauchada.postulante.ids.include?(current_usuario.id))%>
    <%= link_to 'Postularme', postulante_path ,class: 'btn btn-success'%>
 <%else%>
   <!--<%= link_to 'Postularme', postulante_path ,disabled: !department.deletable?,class: 'btn btn-success'%>-->
