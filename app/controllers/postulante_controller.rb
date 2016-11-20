@@ -6,7 +6,9 @@ class PostulanteController < ApplicationController
 
 
   def create
-      @postulante = Postulante.new(postulante_params)
+      @postulante = @gauchada.postulante.create
+      @postulante.usuario_id=current_usuario
+      @postulante.estado=false
       if(@postulante.save)
         flash[:notice]="Te has postulado correctamente"
       else

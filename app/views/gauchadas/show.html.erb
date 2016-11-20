@@ -1,10 +1,11 @@
 <h1>Gauchada</h1>
 <%if(!@gauchada.postulante_ids.include?(current_usuario.id))%>
-   <%= link_to 'Postularme', postulante_path ,class: 'btn btn-success'%>
+   <%= link_to 'Postularme', postulante_path ,method: post, class: 'btn btn-success'%>
 <%else%>
   <!--<%= link_to 'Postularme', postulante_path ,disabled: !department.deletable?,class: 'btn btn-success'%>-->
   <%= link_to 'Postularme', postulante_path ,disabled: true,class: 'btn btn-success'%>
 <% end %>
+</br>
 Nombre:<p><i><%=@gauchada.nombre %></i></p>
 Descripcion:<p><i><%=@gauchada.descripcion %></i></p>
 Solicitante:<p><i><%=Usuario.find(@gauchada.usuario_id).nombre%></i></p>
