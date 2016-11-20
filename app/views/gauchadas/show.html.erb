@@ -1,5 +1,5 @@
 <h1>Gauchada</h1>
-<p class="byline"style="text-align: right; font-weight: bold;"><%= @gauchada.estado %></p>
+<p class="byline"style="text-align: left; font-weight: bold;"><i><%= @gauchada.estado %></i></p>
 <%if !current_usuario.nil? && @gauchada.estado!="en proceso" %>
   <%if current_usuario.id==@gauchada.usuario_id%>
     Editar:
