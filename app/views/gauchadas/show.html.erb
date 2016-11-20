@@ -18,7 +18,9 @@
         <h4 class="modal-title" id="myModalLabel">Postulacion</h4>
       </div>
       <div class="modal-body">
-        <%= render 'form_postulacion', :post => @gauchada %>
+        <% for(@gauchada) |gauchada| %>
+        <%= render 'form_postulacion', :post => gauchada %>
+        <% end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">No, mejor no</button>
