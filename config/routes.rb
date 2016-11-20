@@ -10,10 +10,6 @@ Rails.application.routes.draw do
 
   get 'compra/edit'
 
-  get 'postulante/index'
-
-  get 'postulante/show'
-
   get '/logros/new' , to: 'logros#new'
   get '/logros/show' , to: 'logros#show'
   get '/under_construction' , to: 'mains#under_construction'
@@ -23,6 +19,7 @@ Rails.application.routes.draw do
   devise_for :usuarios, :controllers => { registrations: 'registrations' }
 
   resources :usuarios
+  resources :postulantes
   resources :logros
   resources :gauchadas
   resources :mains
