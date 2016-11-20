@@ -16,6 +16,7 @@ class PostulantesController < ApplicationController
         end
         flash[:error]=message
       end
+      redirect_to gauchada_path(Gauchada.find(@postulante.gauchada_id))
   end
 
 

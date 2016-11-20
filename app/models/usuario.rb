@@ -5,4 +5,5 @@ class Usuario < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :gauchadas, dependent: :destroy
   has_many :compras
+  has_many :postulantes
 end
