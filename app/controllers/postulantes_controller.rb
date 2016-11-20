@@ -16,7 +16,6 @@ class PostulantesController < ApplicationController
         end
         flash[:error]=message
       end
-      redirect_to :back
   end
 
 
