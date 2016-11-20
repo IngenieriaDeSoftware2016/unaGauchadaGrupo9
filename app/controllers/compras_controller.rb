@@ -3,7 +3,7 @@ class ComprasController < ApplicationController
   end
 
   def show
-    @compra = Compra.find(params[:id])
+    @compra = Compra.find(current_usuario.id)
   end
 
   def create
