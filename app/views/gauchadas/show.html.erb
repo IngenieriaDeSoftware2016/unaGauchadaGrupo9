@@ -1,17 +1,17 @@
 <h1>Gauchada</h1>
 <p class="byline"style="text-align: right; font-weight: bold;"><%= @gauchada.estado %></p>
-<%if current_usuario!="nil" && @gauchada.estado!="en proceso" %>
-<%if current_usuario.id==@gauchada.usuario_id%>
+<%if current_usuario!=nil && @gauchada.estado!="en proceso" %>
+  <%if current_usuario.id==@gauchada.usuario_id%>
     Editar:
-   <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_gauchada_path(@gauchada), class: 'btn btn-warning'%>
-   Ver Postulantes
-   <%= link_to '<i class="glyphicon glyphicon-th-list"></i>'.html_safe, gauchadas_postulantes_path(@gauchada), class: 'btn btn-success'%>
-<% end %>
-<%if((@gauchada.postulante_ids & current_usuario.postulante_ids).empty? && @gauchada.usuario_id!=current_usuario.id)%>
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Postularme
-</button>
-<% end %>
+    <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_gauchada_path(@gauchada), class: 'btn btn-warning'%>
+    Ver Postulantes
+    <%= link_to '<i class="glyphicon glyphicon-th-list"></i>'.html_safe, gauchadas_postulantes_path(@gauchada), class: 'btn btn-success'%>
+  <% end %>
+  <%if((@gauchada.postulante_ids & current_usuario.postulante_ids).empty? && @gauchada.usuario_id!=current_usuario.id)%>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+      Postularme
+    </button>
+  <% end %>
 <% end %>
 
 <!-- Modal -->
