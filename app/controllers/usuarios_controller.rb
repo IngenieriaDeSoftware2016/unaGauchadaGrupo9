@@ -7,11 +7,9 @@ class UsuariosController < ApplicationController
 
   def show
     @usuario = Usuario.find(current_usuario.id)
-<<<<<<< HEAD
     redirect_to (usuario_path)
-=======
     redirect_to @usuario
->>>>>>> f4a0154ea3eb6e6c858b5af29edda67e13872f41
+
   end
 
   def edit
