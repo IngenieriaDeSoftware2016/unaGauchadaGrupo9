@@ -46,16 +46,18 @@ class GauchadasController < ApplicationController
       redirect_to gauchadas_path(@gauchada)
   end
 
+  def postulantes
+    @gauchada = Gauchada.find(params[:id])
+    redirect_to gauchada_path(24)
+  end
+
   def postulacion
   respond_to do |format|
     format.html
     format.js
   end
 
-  def postulantes
-    @gauchada = Gauchada.find(params[:id])
-    redirect_to gauchada_path(24)
-  end
+
 end
 
 private
