@@ -20,6 +20,8 @@ class GauchadasController < ApplicationController
 
   def create
       if(current_usuario.puntaje>0)
+        current_usuario.puntaje=current_usuario.puntaje-1
+        current_usuario.save
         @gauchada = Gauchada.new(gauchada_params)
         if(@gauchada.save)
           flash[:notice]="Gauchada publicada"
