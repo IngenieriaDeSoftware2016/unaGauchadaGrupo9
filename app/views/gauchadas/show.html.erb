@@ -1,4 +1,4 @@
-<h1>Gauchada</h1><p class="byline" style="text-align: left; font-weight: bold;">
+<p class="byline" style="text-align: left; font-weight: bold;">
     <i><%= @gauchada.estado %></i>
 </p>
 <%if !current_usuario.nil? && @gauchada.estado!="en proceso" %>
@@ -45,43 +45,31 @@ Ver Postulantes
 <div class="panel panel-default">
 <div class="panel-heading">
     <h3 class="panel-title">
-        Perfil
+        Gauchada
     </h3>
 </div>
 <div class="panel-body">
     <h4>Nombre:
-      <i><%=@gauchada.nombre %></i>
+        <i><%=@gauchada.nombre %></i>
+    </h4>
     <h4>Descripcion:
-      <i><%=@gauchada.descripcion %></i>
+        <i><%=@gauchada.descripcion %></i>
+    </h4>
     <h4>Solicitante:
-      <i><%=Usuario.find(@gauchada.usuario_id).nombre%></i>
+        <i><%=Usuario.find(@gauchada.usuario_id).nombre%></i>
+    </h4>
     <h4>Localidad:
-      <i><%=@gauchada.localidad %></i>
+        <i><%=@gauchada.localidad %></i>
+    </h4>
     <h4>Fecha de creacion:
-      <i><%= l(@gauchada.creacion, format: '%d de %B de %Y') %></i>
+        <i><%= l(@gauchada.creacion, format: '%d de %B de %Y') %></i>
+    </h4>
     <h4>Fecha de vencimiento:
-      <i><%= l(@gauchada.vencimiento, format: '%d de %B de %Y') %></i>
+        <i><%= l(@gauchada.vencimiento, format: '%d de %B de %Y') %></i>
+    </h4>
+    <br>
     <br>
     <%= link_to 'Volver', :back, class: 'btn btn-info'%>
     <br>
 </div>
 </div>
-Nombre:<p>
-<i><%=@gauchada.nombre %></i>
-</p>
-Descripcion:<p>
-<i><%=@gauchada.descripcion %></i>
-</p>
-Solicitante:<p>
-<i><%=Usuario.find(@gauchada.usuario_id).nombre%></i>
-</p>
-Localidad:<p>
-<i><%=@gauchada.localidad %></i>
-</p>
-Fecha de creacion:<p>
-<i><%= l(@gauchada.creacion, format: '%d de %B de %Y') %></i>
-</p>
-Fecha de vencimiento<p>
-<i><%= l(@gauchada.vencimiento, format: '%d de %B de %Y') %></i>
-</p>
-<%= link_to 'Volver', :back, class: 'btn btn-info'%>
