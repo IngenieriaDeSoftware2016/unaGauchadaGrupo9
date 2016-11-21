@@ -1,6 +1,4 @@
-	<h1> Crear compra </h1>
-
-  <%= form_for(@compra) do |c| %>
+	<%= form_for(@compra) do |c| %>
   <div class="field">
     <%= c.hidden_field :usuario_id, :value => current_usuario.id%>
   </div>
