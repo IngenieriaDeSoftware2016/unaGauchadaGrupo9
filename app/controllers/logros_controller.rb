@@ -29,7 +29,7 @@ class LogrosController < ApplicationController
 
   def show
     @logro =  Logro.find(params[:id])
-
+    @logro.order(:puntaje)
   end
 
   def create
