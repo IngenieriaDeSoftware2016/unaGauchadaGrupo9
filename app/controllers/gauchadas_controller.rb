@@ -20,6 +20,8 @@ class GauchadasController < ApplicationController
 
   def create
       if(current_usuario.puntaje>0)
+        current_usuario.puntaje=current_usuario.puntaje-1
+        current_usuario.save
         @gauchada = Gauchada.new(gauchada_params)
         if(@gauchada.save)
           flash[:notice]="Gauchada publicada"
@@ -33,8 +35,8 @@ class GauchadasController < ApplicationController
         redirect_to gauchada_path(@gauchada)
       else
         flash[:error]="No posee suficientes puntos para publicar una gauchada"
-        redirect_to :back
-      end      
+        redirect_to new_compra_path
+      end
   end
   def update
     @gauchada=Gauchada.find(params[:id])
