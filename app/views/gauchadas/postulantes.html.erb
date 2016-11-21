@@ -3,6 +3,7 @@
 <% @gauchada.postulantes.each do |p| %>
 <div class="col-lg-3 col-md-4 col-xs-6 thumb">
   <a class="thumbnail">
+    <img class="img-responsive" src="http://yokux.com/avatars/dani.jpg" alt="">
     <div class="text-under-thumbnail">
       <h4>Nombre: <%=Usuario.find(p.usuario_id).nombre%></h4>
       <p>Razon: <%=p.razon%></p>
