@@ -21,8 +21,8 @@ class ComprasController < ApplicationController
         message=message+msg+"\n"
       end
       flash[:error]=message
+      redirect_to :back
     end
-    redirect_to :back
   end
 
   def new
