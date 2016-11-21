@@ -7,6 +7,13 @@ class UsuariosController < ApplicationController
 
   def show
     @usuario = Usuario.find(current_usuario.id)
+    @logro=Logro.first
+    Logro.all.each do |l|
+      if(@usuario.puntaje>@logro.puntaje)
+        @logro=l
+        end
+      end
+    end
   end
 
   def edit

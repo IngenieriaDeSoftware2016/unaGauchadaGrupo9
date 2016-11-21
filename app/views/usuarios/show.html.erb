@@ -3,12 +3,5 @@
 Nombre:<p><i><%=@usuario.nombre %></i></p>
 Edad:<p><i><%=@usuario.edad %></i></p>
 Localidad:<p><i><%=@usuario.localidad%></i></p>
-<%lmax=Logro.first%>
-<% Logro.all.each do |l| %>
-  <%if(@usuario.puntaje>lmax)%>
-    <%lmax=l%>
-    <%end%>
-  <%end%>
-<%end%>
 Logro:<p><i><%=lmax.nombre%></i></p>
 <%= link_to 'Volver', :back, class: 'btn btn-info'%>
