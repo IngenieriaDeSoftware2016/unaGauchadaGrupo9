@@ -19,16 +19,21 @@ class GauchadasController < ApplicationController
   end
 
   def create
-       @gauchada = Gauchada.new(gauchada_params)
-       if(@gauchada.save)
-         flash[:notice]="Gauchada publicada"
-       else
-         message=""
-         @gauchada.errors.full_messages.each do |msg|
-           message=message+msg+"\n"
-         end
-         flash[:error]=message
-       end
+      if(current_usuario.puntaje>0)
+        @gauchada = Gauchada.new(gauchada_params)
+        if(@gauchada.save)
+          flash[:notice]="Gauchada publicada"
+        else
+          message=""
+          @gauchada.errors.full_messages.each do |msg|
+            message=message+msg+"\n"
+          end
+          flash[:error]=message
+        end
+      else
+        flash[:error]="No posee suficientes puntos para publicar una gauchada"
+      end
+
        redirect_to gauchada_path(@gauchada)
   end
   def update
