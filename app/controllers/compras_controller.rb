@@ -35,7 +35,7 @@ class ComprasController < ApplicationController
 
   private
 
-   def gauchada_params
+   def compra_params
       params.require(:compra).permit(:usuario_id, :precio_unitario, :precio_total, :cantidad_puntos)
    end
 
