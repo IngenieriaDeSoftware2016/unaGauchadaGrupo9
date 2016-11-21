@@ -14,15 +14,14 @@ class ComprasController < ApplicationController
       @usuario.puntaje=@usuario.puntaje+@compra.cantidad_puntos
       @usuario.save
       flash[:notice]="Compra Realizada"
-      redirect_to usuario_path(@usuario)
     else
       message=""
       @compra.errors.full_messages.each do |msg|
         message=message+msg+"\n"
       end
       flash[:error]=message
-      redirect_to :back
     end
+    redirect_to usuario_path(@usuario)
   end
 
   def new
