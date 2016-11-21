@@ -1,7 +1,7 @@
 class LogrosController < ApplicationController
   before_action :is_admin , :if => :authenticate_usuario!
   def index
-    @logros=Logro.all
+      @logro.order(:puntaje)
   end
 
   def new
@@ -29,7 +29,7 @@ class LogrosController < ApplicationController
 
   def show
     @logro =  Logro.find(params[:id])
-    @logro.order(:puntaje)
+
   end
 
   def create
