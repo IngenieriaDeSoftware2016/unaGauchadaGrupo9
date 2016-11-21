@@ -9,7 +9,7 @@
 	</div>
 
 	<div class="field">
-    <%= c.hidden_field :precio_total, :value => :precio_unitario * c.cantidad_puntos %>
+    <%= c.hidden_field :precio_total, :value => :precio_unitario * :cantidad_puntos %>
   </div>
   <div class="field">
     <%= c.hidden_field :usuario_id, :value => current_usuario.id%>
