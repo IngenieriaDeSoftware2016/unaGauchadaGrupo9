@@ -48,6 +48,10 @@ class GauchadasController < ApplicationController
 
   def postulantes
     @gauchada = Gauchada.find(params[:id])
+    if (@gauchada.estado!="libre" || @gauchada.usuario_id!=current_usuario.id)
+      flash[:error]="Acceso denegado"
+      redirect_to :back
+    end
   end
 
   def postulacion
