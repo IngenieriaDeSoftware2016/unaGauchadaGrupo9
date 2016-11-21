@@ -9,8 +9,10 @@ class UsuariosController < ApplicationController
     @usuario = Usuario.find(current_usuario.id)
     @logro=Logro.find(1)
     Logro.all.each do |l|
-      if(@usuario.puntaje>l.puntaje && l.puntaje<@logro)
-        @logro=l
+      if(@usuario.puntaje>l.puntaje)
+        if(l.puntaje<@logro)
+          @logro=l
+        end
       end
     end
   end
