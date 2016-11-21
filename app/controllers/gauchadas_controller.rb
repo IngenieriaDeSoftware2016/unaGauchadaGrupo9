@@ -33,8 +33,8 @@ class GauchadasController < ApplicationController
         redirect_to gauchada_path(@gauchada)
       else
         flash[:error]="No posee suficientes puntos para publicar una gauchada"
-        redirect_to :back
-      end      
+        redirect_to new_compra_path
+      end
   end
   def update
     @gauchada=Gauchada.find(params[:id])
