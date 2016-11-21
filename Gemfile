@@ -26,6 +26,8 @@ gem 'spring'
 
 gem 'hirb'
 
+gem "paperclip-dropbox", ">= 1.1.7"
+
 gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'autoprefixer-rails'

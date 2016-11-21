@@ -6,4 +6,5 @@ class Usuario < ActiveRecord::Base
   has_many :gauchadas, dependent: :destroy
   has_many :compras
   has_many :postulantes
+  has_one :imagens
 end
