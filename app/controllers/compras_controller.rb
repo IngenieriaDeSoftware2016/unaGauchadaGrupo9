@@ -7,8 +7,12 @@ class ComprasController < ApplicationController
   end
 
   def create
-    @compra = compra.new(compra_params)
+    @compra = Compra.new(compra_params)
+    @compra.precio_total=@compra.precio_unitario*@compra.cantidad_puntos
     if(@compra.save)
+      @usuario=Usuario.find(@compra.usuario_id)
+      @usuario.puntaje=@usuario.puntaje+@compra.cantidad_puntos
+      @usuario.save
       flash[:notice]="Compra Realizada"
     else
       message=""
@@ -17,7 +21,7 @@ class ComprasController < ApplicationController
       end
       flash[:error]=message
     end
-    redirect_to :back
+    redirect_to usuario_path(@usuario)
   end
 
   def new
@@ -27,5 +31,11 @@ class ComprasController < ApplicationController
   def edit
     @compra = Compra.find(params[:id])
   end
+
+  private
+
+   def compra_params
+      params.require(:compra).permit(:usuario_id, :precio_unitario, :precio_total, :cantidad_puntos)
+   end
 
 end
