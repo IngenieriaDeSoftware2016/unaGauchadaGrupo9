@@ -8,7 +8,6 @@
         Logged in as <strong><%= current_usuario.email %></strong>.
         | <%= link_to 'Mi Perfil', usuario_path, :class => 'navbar-link' %> |
         <%= link_to 'Editar Perfil', edit_usuario_registration_path, :class => 'navbar-link' %> |
-      ##  <%= link_to 'Compras', compra_path, :class => 'navbar-link' %> |
         <%if current_usuario!=nil%>
         <%if current_usuario.admin%>
            <%= link_to 'Menu Logros', logros_path, class: 'navbar-link'%> |
