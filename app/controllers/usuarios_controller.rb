@@ -11,7 +11,6 @@ class UsuariosController < ApplicationController
     Logro.all.each do |l|
       if(@usuario.puntaje>@logro.puntaje)
         @logro=l
-        end
       end
     end
   end
