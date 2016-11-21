@@ -30,13 +30,17 @@
 	        <h4 class="modal-title" id="myModalLabel">Confirmar compra</h4>
 	      </div>
 	      <div class="modal-body">
-					<div class="field">
-					  <%= c.label :numero_de_tarjeta %><br />
-					  <%= c.text_field :numero_de_tarjeta,required: true, autofocus: true %>
+					<div>
+						<label for="inputCard" class="col-sm-2 col-form-label">Numero de tarjeta</label>
+    				<div>
+      				<input type="number" class="form-control" id="inputCard" placeholder="555555555">
+    				</div>
 					</div>
-					<div class="field">
-					  <%= c.label :codigo_de_seguridad %><br />
-					  <%= c.text_field :codigo_de_seguridad,required: true, autofocus: true %>
+					<div>
+						<label for="inputCard" class="col-sm-2 col-form-label">Numero de seguridad</label>
+    				<div>
+      				<input type="number" class="form-control" id="inputCard" placeholder="123">
+    				</div>
 					</div>
 	      </div>
 	      <div class="modal-footer">
