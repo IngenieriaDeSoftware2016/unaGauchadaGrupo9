@@ -8,8 +8,13 @@ class ComprasController < ApplicationController
 
   def create
     @compra = compra.new(compra_params)
+    @compra.precio_total=@compra.precio_unitario*@compra.cantidad_puntos
     if(@compra.save)
+      @usuario=Usuario.find(@compra.usuario_id)
+      @usuario.puntaje=u.puntaje+@compra.cantidad_puntos
+      @usuario.save
       flash[:notice]="Compra Realizada"
+      redirect_to usuario_path(@usuario)
     else
       message=""
       @compra.errors.full_messages.each do |msg|
@@ -27,5 +32,11 @@ class ComprasController < ApplicationController
   def edit
     @compra = Compra.find(params[:id])
   end
+
+  private
+
+   def gauchada_params
+      params.require(:compra).permit(:usuario_id, :precio_unitario, :precio_total, :cantidad_puntos)
+   end
 
 end
