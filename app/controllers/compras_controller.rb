@@ -11,7 +11,7 @@ class ComprasController < ApplicationController
     @compra.precio_total=@compra.precio_unitario*@compra.cantidad_puntos
     if(@compra.save)
       @usuario=Usuario.find(@compra.usuario_id)
-      @usuario.puntaje=u.puntaje+@compra.cantidad_puntos
+      @usuario.puntaje=@usuario.puntaje+@compra.cantidad_puntos
       @usuario.save
       flash[:notice]="Compra Realizada"
       redirect_to usuario_path(@usuario)
