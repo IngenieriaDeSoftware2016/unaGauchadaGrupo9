@@ -1,17 +1,18 @@
-<h1>Gauchada</h1>
-<p class="byline"style="text-align: left; font-weight: bold;"><i><%= @gauchada.estado %></i></p>
+<h1>Gauchada</h1><p class="byline" style="text-align: left; font-weight: bold;">
+    <i><%= @gauchada.estado %></i>
+</p>
 <%if !current_usuario.nil? && @gauchada.estado!="en proceso" %>
-  <%if current_usuario.id==@gauchada.usuario_id%>
-    Editar:
-    <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_gauchada_path(@gauchada), class: 'btn btn-warning'%>
-    Ver Postulantes
-    <%= link_to '<i class="glyphicon glyphicon-th-list"></i>'.html_safe, gauchadas_postulantes_path(@gauchada), class: 'btn btn-success'%>
-  <% end %>
-  <%if((@gauchada.postulante_ids & current_usuario.postulante_ids).empty? && @gauchada.usuario_id!=current_usuario.id)%>
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-      Postularme
-    </button>
-  <% end %>
+<%if current_usuario.id==@gauchada.usuario_id%>
+Editar:
+<%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_gauchada_path(@gauchada), class: 'btn btn-warning'%>
+Ver Postulantes
+<%= link_to '<i class="glyphicon glyphicon-th-list"></i>'.html_safe, gauchadas_postulantes_path(@gauchada), class: 'btn btn-success'%>
+<% end %>
+<%if((@gauchada.postulante_ids & current_usuario.postulante_ids).empty? && @gauchada.usuario_id!=current_usuario.id)%>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Postularme
+</button>
+<% end %>
 <% end %>
 <%if @gauchada.estado=="en proceso" %>
 <%= link_to '<i class="glyphicon glyphicon-ok">Resuelta</i>'.html_safe, under_construction_path, class: 'btn btn-success'%>
@@ -20,30 +21,67 @@
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title" id="myModalLabel">Postulacion</h4>
-      </div>
-      <div class="modal-body">
-        <%= render 'form_postulacion', gauchada: @gauchada %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">No, mejor no</button>
-      </div>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Postulacion</h4>
+            </div>
+            <div class="modal-body">
+                <%= render 'form_postulacion', gauchada: @gauchada %>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No, mejor no</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 </br>
 <img class="img-responsive" src="https://s22.postimg.org/cs5ohupgx/logo.png" alt="">
-Nombre:<p><i><%=@gauchada.nombre %></i></p>
-Descripcion:<p><i><%=@gauchada.descripcion %></i></p>
-Solicitante:<p><i><%=Usuario.find(@gauchada.usuario_id).nombre%></i></p>
-Localidad:<p><i><%=@gauchada.localidad %></i></p>
-Fecha de creacion:<p><i><%= l(@gauchada.creacion, format: '%d de %B de %Y') %></i></p>
-Fecha de vencimiento<p><i><%= l(@gauchada.vencimiento, format: '%d de %B de %Y') %></i></p>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+    <h3 class="panel-title">
+        Perfil
+    </h3>
+</div>
+<div class="panel-body">
+    <h4>Nombre:
+      <i><%=@gauchada.nombre %></i>
+    <h4>Descripcion:
+      <i><%=@gauchada.descripcion %></i>
+    <h4>Solicitante:
+      <i><%=Usuario.find(@gauchada.usuario_id).nombre%></i>
+    <h4>Localidad:
+      <i><%=@gauchada.localidad %></i>
+    <h4>Fecha de creacion:
+      <i><%= l(@gauchada.creacion, format: '%d de %B de %Y') %></i>
+    <h4>Fecha de vencimiento:
+      <i><%= l(@gauchada.vencimiento, format: '%d de %B de %Y') %></i>
+    <br>
+    <%= link_to 'Volver', :back, class: 'btn btn-info'%>
+    <br>
+</div>
+</div>
+Nombre:<p>
+<i><%=@gauchada.nombre %></i>
+</p>
+Descripcion:<p>
+<i><%=@gauchada.descripcion %></i>
+</p>
+Solicitante:<p>
+<i><%=Usuario.find(@gauchada.usuario_id).nombre%></i>
+</p>
+Localidad:<p>
+<i><%=@gauchada.localidad %></i>
+</p>
+Fecha de creacion:<p>
+<i><%= l(@gauchada.creacion, format: '%d de %B de %Y') %></i>
+</p>
+Fecha de vencimiento<p>
+<i><%= l(@gauchada.vencimiento, format: '%d de %B de %Y') %></i>
+</p>
 <%= link_to 'Volver', :back, class: 'btn btn-info'%>
