@@ -3,23 +3,21 @@
 
   <%= form_for(@compra) do |c| %>
 
-  <div class="field">
-    <%= c.label :precio_unitario  %><br />
-    <%= c.text_field :precio_unitario,required: true, autofocus: true %>
-  </div>
 
-  <div class="field">
-    <%= c.label :precio_total %><br />
-    <%= c.text_field :precio_total,required: true, autofocus: true %>
-  </div>
+	<div class="field">
+	  <%= c.hidden_field :precio_unitario, :value => Usuario.find(10).puntaje%>
+	</div>
 
+	<div class="field">
+    <%= c.hidden_field :precio_total, :value => precio_unitario * cantidad_puntos %>
+  </div>
   <div class="field">
     <%= c.hidden_field :id_usuario, :value => current_usuario.id%>
   </div>
 
   <div class="field">
     <%= c.label :cantidad_puntos %><br />
-    <%= c.text_field :cantidad_puntos,required: true, autofocus: true %>
+		<%= c.number_field :cantidad_puntos, min: 1, default:1, autofocus: true,required: true %>
   </div>
 
     <div class="actions">
