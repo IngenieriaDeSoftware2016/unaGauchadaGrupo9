@@ -1,9 +1,23 @@
 Rails.application.routes.draw do
 
+  get 'imagen/new'
+
+  get 'imagen/create'
+
+  get 'imagen/update'
+
+  get 'imagen/edit'
+
+  get 'imagen/destroy'
+
+  get 'imagen/index'
+
+  get 'imagen/show'
+
   get 'compra/index'
 
   get 'compra/show'
-  get 'compra/create' 
+  get 'compra/create'
 
   get 'compra/new'
   get 'compra/edit'
@@ -29,6 +43,7 @@ Rails.application.routes.draw do
   resources :postulantes
   resources :logros
   resources :gauchadas
+  resources :imagens
   resources :mains
   devise_scope :usuario do
     root :to => 'gauchadas#index'
