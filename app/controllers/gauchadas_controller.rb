@@ -30,11 +30,11 @@ class GauchadasController < ApplicationController
           end
           flash[:error]=message
         end
+        redirect_to gauchada_path(@gauchada)
       else
         flash[:error]="No posee suficientes puntos para publicar una gauchada"
-      end
-
-       redirect_to gauchada_path(@gauchada)
+        redirect_to :back
+      end      
   end
   def update
     @gauchada=Gauchada.find(params[:id])
