@@ -1,15 +1,15 @@
 	<h1> Crear compra </h1>
 
-
+<% precio_u = Usuario.find(10).puntaje%>
   <%= form_for(@compra) do |c| %>
 
 
 	<div class="field">
-	  <%= c.hidden_field :precio_unitario, :value => Usuario.find(10).puntaje%>
+	  <%= c.hidden_field :precio_unitario, :value => precio_u%>
 	</div>
 
 	<div class="field">
-    <%= c.hidden_field :precio_total, :value => precio_unitario * cantidad_puntos %>
+    <%= c.hidden_field :precio_total, :value => c.precio_unitario * c.cantidad_puntos %>
   </div>
   <div class="field">
     <%= c.hidden_field :usuario_id, :value => current_usuario.id%>
