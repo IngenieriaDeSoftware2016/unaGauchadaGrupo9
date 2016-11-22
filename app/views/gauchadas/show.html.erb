@@ -1,6 +1,3 @@
-<p class="byline" style="text-align: left; font-weight: bold;">
-    <i><%= @gauchada.estado %></i>
-</p>
 <%if !current_usuario.nil? && @gauchada.estado!="en proceso" %>
 <%if current_usuario.id==@gauchada.usuario_id%>
 Editar:
@@ -40,15 +37,18 @@ Ver Postulantes
 </div>
 
 </br>
-<img class="img-responsive" src="https://s22.postimg.org/cs5ohupgx/logo.png" alt="">
 
 <div class="panel panel-default">
 <div class="panel-heading">
     <h3 class="panel-title">
         Gauchada
     </h3>
+    <p class="byline" style="text-align: left; font-weight: bold;">
+        <i><%= @gauchada.estado %></i>
+    </p>
 </div>
 <div class="panel-body">
+  <div class="col-lg-6 col-md-6 col-xs-6">
     <h4>Nombre:
         <i><%=@gauchada.nombre %></i>
     </h4>
@@ -71,5 +71,9 @@ Ver Postulantes
     <br>
     <%= link_to 'Volver', :back, class: 'btn btn-info'%>
     <br>
+  </div>
+  <div class="col-lg-6 col-md-6 col-xs-6">
+    <img class="img-responsive" src="https://s22.postimg.org/cs5ohupgx/logo.png" alt="">
+  </div>
 </div>
 </div>
