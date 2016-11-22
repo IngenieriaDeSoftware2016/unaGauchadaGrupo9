@@ -65,6 +65,8 @@ GEM
       execjs
     bcrypt (3.1.11)
     bcrypt (3.1.11-x86-mingw32)
+    bootstrap-datepicker-rails (1.6.4.1)
+      railties (>= 3.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -173,6 +175,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
+    timeliness (0.3.8)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
@@ -182,6 +185,8 @@ GEM
       tzinfo (>= 1.0.0)
     uglifier (3.0.3)
       execjs (>= 0.3.0, < 3)
+    validates_timeliness (4.0.2)
+      timeliness (~> 0.3.7)
     warden (1.2.6)
       rack (>= 1.0)
 
@@ -192,6 +197,7 @@ PLATFORMS
 DEPENDENCIES
   anjlab-bootstrap-rails (~> 3.0.0.3)
   autoprefixer-rails
+  bootstrap-datepicker-rails
   bootstrap-sass (~> 3.3.6)
   bootstrap_form
   coffee-rails (~> 4.1.0)
@@ -211,6 +217,7 @@ DEPENDENCIES
   turbolinks
   tzinfo-data
   uglifier (>= 1.3.0)
+  validates_timeliness (~> 4.0)
 
 BUNDLED WITH
    1.13.6
