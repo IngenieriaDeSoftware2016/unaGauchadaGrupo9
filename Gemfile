@@ -24,6 +24,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'spring'
 
+gem 'bootstrap_form'
+
 gem 'hirb'
 
 gem 'bootstrap-sass', '~> 3.3.6'
