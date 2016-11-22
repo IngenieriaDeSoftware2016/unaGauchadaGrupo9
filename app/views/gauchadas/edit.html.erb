@@ -7,17 +7,14 @@
 </div>
 
 <div class="field">
-    <%= g.label :descripcion %><br/>
     <%= g.text_field :descripcion,required: true, autofocus: true %>
 </div>
 
 <div class="field">
-    <%= g.label :localidad %><br/>
     <%= g.text_field :localidad,required: true, autofocus: true %>
 </div>
 
 <div class="field">
-    <%= g.label :vencimiento %><br/>
     <%= g.date_select :vencimiento, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre'],:order => [:day, :month, :year], :prompt => true, :start_year =>
     Time.now.year, :end_year => Time.now.year+5 }, {required: true}%>
 </div>
