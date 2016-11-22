@@ -1,5 +1,5 @@
 <h2>Editar Gauchada</h2>
-
+<div class= "panel-body">
 <%= bootstrap_form_for(@gauchada) do |g| %>
 
 <div class="field">
@@ -15,7 +15,11 @@
 </div>
 
 <div class="field">
+<<<<<<< HEAD
+    <%= g.date_select :vencimiento, {:order => [:day, :month, :year], :prompt => true, :start_month => Time.now.month, :end_year => Time.now.year+5},
+=======
   <%= g.date_select :vencimiento, {:order => [:day, :month, :year], :prompt => true, :start_year => Time.now.year, :end_year => Time.now.year+5, :start_month => Time.now.month, :start_day =>Time.now.day},
+>>>>>>> fa414d5af378979bd5b4c35695ff25701dc6b9e0
      {required: true} %>
 </div>
 
@@ -27,7 +31,7 @@
     <%= g.submit "Actualizar" %>
 </div>
 <% end %>
-
+</div>
 <br>
 <br>
 <%= link_to "Volver", :back %>
