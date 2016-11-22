@@ -65,7 +65,7 @@
     </button>
     <% end %>
     <% end %>
-    <%if !current_usuario.nil?
+    <%if !current_usuario.nil?%>
     <%if (@gauchada.estado=="en proceso"  && @gauchada.usuario_id==current_usuario.id) %>
     <%= link_to '<i class="glyphicon glyphicon-ok">Resuelta</i>'.html_safe, under_construction_path, class: 'btn btn-success'%>
     <%= link_to '<i class="glyphicon glyphicon-remove">Rechazar</i>'.html_safe, under_construction_path, class: 'btn btn-danger'%>
