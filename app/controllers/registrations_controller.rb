@@ -1,10 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
 
-  def edit
-    super()
-    redirect_to usuario_path
-  end
-  
+  #def edit
+    #super()
+    #redirect_to usuario_path
+  #end
+
   private
 
   # my custom fields are :name, :heard_how
