@@ -26,6 +26,8 @@ gem 'spring'
 
 gem 'bootstrap_form'
 
+gem 'bootstrap-datepicker-rails'
+
 gem 'hirb'
 
 gem 'bootstrap-sass', '~> 3.3.6'
