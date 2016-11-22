@@ -1,5 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
 
+  def edit
+    super()
+    redirect_to usuario_path
+  end
+  
   private
 
   # my custom fields are :name, :heard_how
@@ -12,5 +17,7 @@ class RegistrationsController < Devise::RegistrationsController
     allow = [:email, :password, :password_confirmation, :nombre,:edad ,:rol,:telefono,:localidad,:puntaje]
     params.require(resource_name).permit(allow)
   end
+
+
 
 end
