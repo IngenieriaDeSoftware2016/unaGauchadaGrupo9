@@ -1,5 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
 
+  public
+
   #def edit
     #super()
     #redirect_to usuario_path
