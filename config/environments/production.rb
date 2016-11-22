@@ -92,7 +92,7 @@ Rails.application.configure do
   :user_name => 'unagauchada@yahoo.com',
   :password => 'villaMirasol09',
   :domain => 'smtp.yahoo.com',
-  :address => 'smtp.yahoo.com',
+  :address => 'yahoo.com',
   :port => '25',
   :authentication => :plain
 }
