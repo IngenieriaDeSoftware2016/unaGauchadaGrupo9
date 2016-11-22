@@ -56,7 +56,7 @@
     <%if current_usuario.id==@gauchada.usuario_id%>
     Editar:
     <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_gauchada_path(@gauchada), class: 'btn btn-warning'%>
-    Ver Postulantes
+    Ver Postulantes:
     <%= link_to '<i class="glyphicon glyphicon-th-list"></i>'.html_safe, gauchadas_postulantes_path(@gauchada), class: 'btn btn-success'%>
     <% end %>
     <%if((@gauchada.postulante_ids & current_usuario.postulante_ids).empty? && @gauchada.usuario_id!=current_usuario.id)%>
@@ -65,11 +65,10 @@
     </button>
     <% end %>
     <% end %>
-    <%if @gauchada.estado=="en proceso" %>
+    <%if (@gauchada.estado=="en proceso"  && @gauchada.usuario_id==current_usuario.id) %>
     <%= link_to '<i class="glyphicon glyphicon-ok">Resuelta</i>'.html_safe, under_construction_path, class: 'btn btn-success'%>
     <%= link_to '<i class="glyphicon glyphicon-remove">Rechazar</i>'.html_safe, under_construction_path, class: 'btn btn-danger'%>
     <% end %>
-    <br>
     <%= link_to 'Volver', :back, class: 'btn btn-info'%>
     <br>
   </div>
