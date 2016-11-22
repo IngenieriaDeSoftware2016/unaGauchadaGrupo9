@@ -78,7 +78,6 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Do not dump schema after migrations.
-  require 'tlsmail'    
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { :host => "una-gauchada-grupo9.herokuapp.com" }
@@ -90,13 +89,5 @@ Rails.application.configure do
   #:domain => 'mailtrap.io',
   #:port => '2525',
   #:authentication => :cram_md5
-   :enable_starttls_auto => true,
-  :tls                  => true,
-  :user_name => 'unagauchada@yahoo.com',
-  :password => 'villaMirasol09',
-  :domain => 'smtp.yahoo.com',
-  :address => 'yahoo.com',
-  :port => '25',
-  :authentication => :plain
 }
 end
