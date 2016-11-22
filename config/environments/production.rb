@@ -89,11 +89,10 @@ Rails.application.configure do
   #:domain => 'mailtrap.io',
   #:port => '2525',
   #:authentication => :cram_md5
-  :user_name => 'unagauchada',
+  :user_name => 'unagauchada@yahoo.com',
   :password => 'villaMirasol09',
   :address => 'smpt.yahoo.com',
-  :domain => 'smpt.yahoo.com',
   :port => '25',
-  :authentication => :login
+  :authentication => :plain
 }
 end
