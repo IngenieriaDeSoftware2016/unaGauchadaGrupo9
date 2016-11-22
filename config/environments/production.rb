@@ -83,11 +83,17 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => "una-gauchada-grupo9.herokuapp.com" }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  :user_name => '9c2464b278997f',
-  :password => 'c39ac373cd1c99',
-  :address => 'mailtrap.io',
-  :domain => 'mailtrap.io',
-  :port => '2525',
-  :authentication => :cram_md5
+  #:user_name => '9c2464b278997f',
+  #:password => 'c39ac373cd1c99',
+  #:address => 'mailtrap.io',
+  #:domain => 'mailtrap.io',
+  #:port => '2525',
+  #:authentication => :cram_md5
+  :user_name => 'unagauchada',
+  :password => 'villaMirasol09',
+  :address => 'smpt.yahoo.com',
+  :domain => 'smpt.yahoo.com',
+  :port => '25',
+  :authentication => :login
 }
 end
