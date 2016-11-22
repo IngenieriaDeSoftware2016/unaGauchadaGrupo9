@@ -15,8 +15,14 @@
 </div>
 
 <div class="field">
+<<<<<<< HEAD
     <%= g.date_select :vencimiento, {:order => [:day, :month, :year], :prompt => true, :start_month => Time.now.month, :start_day =>Time.now.day, :start_year => Time.now.year, :end_year => Time.now.year+5},
      {required: true} %>
+=======
+  <!--  <%= g.date_select :vencimiento, {:order => [:day, :month, :year], :prompt => true, :start_year => Time.now.year, :end_year => Time.now.year+5, :start_month => Time.now.month, :start_day =>Time.now.day},
+     {required: true} %>-->
+     <%= g.input :date, as: :bootstrap_datepicker %>
+>>>>>>> 0bc487d45b9fdc9fd5e87a6ec47dde1573344ed5
 </div>
 
 <div class="field">
