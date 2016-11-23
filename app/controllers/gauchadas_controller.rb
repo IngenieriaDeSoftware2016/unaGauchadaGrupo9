@@ -23,6 +23,9 @@ class GauchadasController < ApplicationController
         current_usuario.puntaje=current_usuario.puntaje-1
         current_usuario.save
         @gauchada = Gauchada.new(gauchada_params)
+        if @gauchada.imagen==""
+          @gauchada.imagen="https://s22.postimg.org/cs5ohupgx/logo.png"
+        end
         if(@gauchada.save)
           flash[:notice]="Gauchada publicada"
         else
@@ -73,9 +76,6 @@ end
 private
 
  def gauchada_params
-   if(:imagen=='')
-     :imagen='asd'
-   end
     params.require(:gauchada).permit(:usuario_id, :creacion, :nombre, :descripcion, :localidad, :vencimiento,:imagen)
  end
 
