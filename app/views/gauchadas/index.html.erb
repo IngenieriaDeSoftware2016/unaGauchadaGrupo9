@@ -37,7 +37,7 @@
   <div class = "caption" style="width: 200px; height: 200px">
     <%u=Usuario.find(gauchada.usuario_id)%>
     <td><%= u.nombre %>: </td>
-    <td><%= truncate(gauchada.descripcion, length: 20) %></td>
+    <td><%= truncate(gauchada.descripcion, length: 40) %></td>
     </br>
     </br>
     <%= link_to '<i class="glyphicon glyphicon-ok"> Ver mas</i>'.html_safe, gauchada_path(gauchada), class: 'btn btn-success'%>
