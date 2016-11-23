@@ -23,59 +23,59 @@
 </br>
 
 <div class="panel panel-default">
-<div class="panel-heading">
+  <div class="panel-heading">
     <h3 class="panel-title">
         Gauchada
     </h3>
     <p class="byline" style="text-align: left; font-weight: bold;">
         <i><%= @gauchada.estado %></i>
     </p>
-</div>
-<div class="panel-body">
-  <div class="col-lg-9 col-md-9 col-xs-12">
-    <h4>Nombre:
-        <i><%=@gauchada.nombre %></i>
-    </h4>
-    <h4>Descripcion:
+  </div>
+  <div class="panel-body">
+    <div class="col-lg-9 col-md-9 col-xs-12">
+      <h4>Nombre:
+          <i><%=@gauchada.nombre %></i>
+      </h4>
+      <h4>Descripcion:
         <i><%=@gauchada.descripcion %></i>
-    </h4>
-    <h4>Solicitante:
+      </h4>
+      <h4>Solicitante:
         <i><%=Usuario.find(@gauchada.usuario_id).nombre%></i>
-    </h4>
-    <h4>Localidad:
-        <i><%=@gauchada.localidad %></i>
-    </h4>
-    <h4>Fecha de creacion:
+      </h4>
+      <h4>Localidad:
+          <i><%=@gauchada.localidad %></i>
+      </h4>
+      <h4>Fecha de creacion:
         <i><%= l(@gauchada.creacion, format: '%d de %B de %Y') %></i>
-    </h4>
-    <h4>Fecha de vencimiento:
+      </h4>
+      <h4>Fecha de vencimiento:
         <i><%= l(@gauchada.vencimiento, format: '%d de %B de %Y') %></i>
-    </h4>
-    <br>
-    <%if !current_usuario.nil? && @gauchada.estado!="en proceso" %>
-    <%if current_usuario.id==@gauchada.usuario_id%>
-    Editar:
-    <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_gauchada_path(@gauchada), class: 'btn btn-warning'%>
-    Ver Postulantes:
-    <%= link_to '<i class="glyphicon glyphicon-th-list"></i>'.html_safe, gauchadas_postulantes_path(@gauchada), class: 'btn btn-success'%>
-    <% end %>
-    <%if((@gauchada.postulante_ids & current_usuario.postulante_ids).empty? && @gauchada.usuario_id!=current_usuario.id)%>
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        Postularme
-    </button>
-    <% end %>
-    <% end %>
-    <%if !current_usuario.nil?%>
-    <%if (@gauchada.estado=="en proceso"  && @gauchada.usuario_id==current_usuario.id) %>
-    <%= link_to '<i class="glyphicon glyphicon-ok">Resuelta</i>'.html_safe, under_construction_path, class: 'btn btn-success'%>
-    <%= link_to '<i class="glyphicon glyphicon-remove">Rechazar</i>'.html_safe, under_construction_path, class: 'btn btn-danger'%>
-    <% end %>
-    <% end %>
-    <%= link_to 'Volver', :back, class: 'btn btn-info'%>
-    <br>
+      </h4>
+      <br>
+      <%if !current_usuario.nil? && @gauchada.estado!="en proceso" %>
+        <%if current_usuario.id==@gauchada.usuario_id%>
+          Editar:
+          <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_gauchada_path(@gauchada), class: 'btn btn-warning'%>
+          Ver Postulantes:
+          <%= link_to '<i class="glyphicon glyphicon-th-list"></i>'.html_safe, gauchadas_postulantes_path(@gauchada), class: 'btn btn-success'%>
+        <% end %>
+        <%if((@gauchada.postulante_ids & current_usuario.postulante_ids).empty? && @gauchada.usuario_id!=current_usuario.id)%>
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            Postularme
+          </button>
+        <% end %>
+      <% end %>
+      <%if !current_usuario.nil?%>
+        <%if (@gauchada.estado=="en proceso"  && @gauchada.usuario_id==current_usuario.id) %>
+          <%= link_to '<i class="glyphicon glyphicon-ok">Resuelta</i>'.html_safe, under_construction_path, class: 'btn btn-success'%>
+          <%= link_to '<i class="glyphicon glyphicon-remove">Rechazar</i>'.html_safe, under_construction_path, class: 'btn btn-danger'%>
+        <% end %>
+      <% end %>
+      <%= link_to 'Volver', :back, class: 'btn btn-info'%>
+      <br>
+      </div>
+      <div class="col-lg-3 col-md-3">
+        <img class="img-responsive" src="<%=@gauchada.imagen%>" alt="">
+      </div>
   </div>
-  <div class="col-lg-3 col-md-3">
-    <img class="img-responsive" src="<%=@gauchada.imagen%>" alt="">
-  </div>
-</div>
 </div>
