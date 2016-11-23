@@ -88,7 +88,7 @@ Rails.application.configure do
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
     address: "smtp.mail.yahoo.com",
-    port: 587,
+    port: 465,
     domain: "una-gauchada-grupo9.herokuapp.com",
     authentication: "plain",
     enable_starttls_auto: true,
