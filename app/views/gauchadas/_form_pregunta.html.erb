@@ -1,5 +1,5 @@
 <%if !current_usuario.nil?%>
-  <%if current_usuario!=gauchada.susario%>
+  <%if current_usuario!=gauchada.usuario%>
     <%@comentario=Comentario.new%>
     <%= bootstrap_form_for(@comentario) do |c| %>
 
@@ -21,9 +21,9 @@
 
       <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
         <i class="icon-ok icon-white"></i> Preguntar!
-      <% end %>
-    <% else %>
-      <%flash[:alert]="No puede hacer una pregunta sobre su propia gauchada!"%>
-      <%redirect_to @gauchada%>
     <% end %>
+  <% else %>
+    <%flash[:alert]="No puede hacer una pregunta sobre su propia gauchada!"%>
+    <%redirect_to @gauchada%>
+  <% end %>
 <% end %>
