@@ -115,7 +115,7 @@
               <ul class="media-list">
                 <li class="media">
                   <a class="pull-left" href="#">
-                    <img class="media-object img-circle" style="width: 200px; height: 200px" src="<%=c.usuario.imagen%>" alt="profile">
+                    <img class="media-object img-circle" style="width: 100px; height: 100px" src="<%=c.usuario.imagen%>" alt="profile">
                   </a>
                   <div class="media-body">
                     <div class="well well-lg">
@@ -126,9 +126,11 @@
                       <p class="media-comment">
                         <%=c.contenido%>
                       </p>
-                      <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#responder">
-                        Responder
-                      </button>
+                      <%if(c.comentario==nil)%>
+                        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#responder">
+                          Responder
+                        </button>
+                      <%end%>
                     </div>
                   </div>
                   <%if(c.comentario!=nil)%>
@@ -191,7 +193,7 @@
                   <h4 class="modal-title" id="myModalLabel">Respuesta</h4>
               </div>
               <div class="modal-body">
-                  <%= render 'form_postulacion', gauchada: @gauchada %>
+                  <%= render 'form_respuesta', gauchada: @gauchada,comentario:c %>
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">No, mejor no</button>

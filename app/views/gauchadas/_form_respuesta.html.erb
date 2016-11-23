@@ -1,0 +1,25 @@
+<%if !current_usuario.nil?%>
+  <%@comentario=Comentario.new%>
+  <%= bootstrap_form_for(@comentario) do |c| %>
+
+    <div class="field">
+      <%= c.text_area :contenido,required: true, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= c.hidden_field :usuario_id, :value => current_usuario.id%>
+    </div>
+
+    <div class="field">
+      <%= c.hidden_field :gauchada_id, :value => gauchada.id%>
+    </div>
+
+    <div class="field">
+      <%= c.hidden_field :pregunta, :value => false%>
+    </div>
+
+    <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+      <i class="icon-ok icon-white"></i> Responder!
+    <% end %>
+  <% end %>
+<% end %>
