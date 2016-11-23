@@ -93,7 +93,7 @@ Rails.application.configure do
   :password => 'villaMirasol09',
   :address => 'smtp.yahoo.com',
   :domain => 'una-gauchada-grupo9.herokuapp.com',
-  :port => '25',
-  :authentication => "login"
+  :port => '465',
+  :authentication => :plain
 }
 end
