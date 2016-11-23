@@ -44,6 +44,9 @@ class GauchadasController < ApplicationController
   def update
     @gauchada=Gauchada.find(params[:id])
       if(@gauchada.update(gauchada_params))
+        if @gauchada.imagen==""
+          @gauchada.imagen="https://s22.postimg.org/cs5ohupgx/logo.png"
+        end
         flash[:notice]="Gauchada actualizado"
       else
         message=""
