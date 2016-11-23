@@ -48,7 +48,11 @@
     <%= f.hidden_field :puntaje, :value => 1%>
   </div>
 
-  <%= f.file_field :image %>
+  <!--<%= f.file_field :image %>-->
+  <div class="field">
+    <%= f.label :Avatar %><br />
+    <%= f.text_field :imagen, autofocus: true%>
+  </div>
 
   <div class="actions">
     <%= f.submit "Registrarse" %>
