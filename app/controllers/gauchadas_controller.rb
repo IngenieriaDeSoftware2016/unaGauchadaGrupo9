@@ -15,13 +15,14 @@ class GauchadasController < ApplicationController
     if current_usuario.nil?
       flash[:alert]="Acceso denegado"
       redirect_to new_usuario_session_path
-    end
-    if(@gauchada.usuario_id!=current_usuario.id)
-      flash[:alert]="Usted no tiene permisos para editar esta gauchada"
-      redirect_to gauchada_path(@gauchada)
-    elsif(@gauchada.estado=="en proceso")
-      flash[:alert]="No puede editarse una gauchada en proceso"
-      redirect_to gauchada_path(@gauchada)
+    else
+      if(@gauchada.usuario_id!=current_usuario.id)
+        flash[:alert]="Usted no tiene permisos para editar esta gauchada"
+        redirect_to gauchada_path(@gauchada)
+      elsif(@gauchada.estado=="en proceso")
+        flash[:alert]="No puede editarse una gauchada en proceso"
+        redirect_to gauchada_path(@gauchada)
+      end
     end
   end
 
