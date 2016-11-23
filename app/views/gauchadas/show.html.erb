@@ -106,7 +106,7 @@
       <div class="comment-tabs">
         <ul class="nav nav-tabs" role="tablist">
           <li class="active"><a href="#pregunta" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Preguntas echa por la comunidad</h4></a></li>
-          <li><a href="#pregunta" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Has una pregunta</h4></a></li>
+          <li><a href="#respuesta" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Has una pregunta</h4></a></li>
         </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="pregunta">
@@ -124,7 +124,7 @@
                     <p class="media-comment">
                       Great snippet! Thanks for sharing.
                     </p>
-                    <a class="btn btn-info btn-circle text-uppercase" href="#respuesta" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Responder</a>
+                    <a class="btn btn-info btn-circle text-uppercase" href="#responder" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Responder</a>
                   </div>
                 </div>
                 <div class="col-lg-offset-1" id="respuesta">
@@ -138,44 +138,41 @@
                           <h4 class="media-heading text-uppercase reviews"><span class="glyphicon glyphicon-share-alt"></span> The Hipster</h4>
                             <ul class="media-date text-uppercase reviews list-inline">
                               <li class="dd">22</li>
-                              <li class="mm">09</li>
-                              <li class="aaaa">2014</li>
                             </ul>
                             <p class="media-comment">
                               Nice job Maria.
                             </p>
-                            <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
-                          </div>
                         </div>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="tab-pane" id="pregunta">
-              <form action="#" method="post" class="form-horizontal" id="commentForm" role="form">
-                <div class="form-group">
-                  <label for="email" class="col-sm-2 control-label">Pregunta</label>
-                  <div class="col-sm-10">
-                    <textarea class="form-control" name="addComment" id="addComment" rows="5"></textarea>
-                  </div>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
-                <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <button class="btn btn-success btn-circle text-uppercase" type="submit" id="submitComment"><span class="glyphicon glyphicon-send"></span> Enviar</button>
-                  </div>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-pane" id="pregunta">
+            <form action="#" method="post" class="form-horizontal" id="commentForm" role="form">
+              <div class="form-group">
+                <label for="email" class="col-sm-2 control-label">Pregunta</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" name="addComment" id="addComment" rows="5"></textarea>
                 </div>
-              </form>
-            </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button class="btn btn-success btn-circle text-uppercase" type="submit" id="submitComment"><span class="glyphicon glyphicon-send"></span> Enviar</button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
   <!-- Modal respuesta-->
-  <div class="modal fade" id="respuesta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade" id="responder" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-header">
