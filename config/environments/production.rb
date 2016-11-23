@@ -94,6 +94,6 @@ Rails.application.configure do
   :address => 'smtp.yahoo.com',
   :domain => 'una-gauchada-grupo9.herokuapp.com',
   :port => '25',
-  :authentication => :login
+  :authentication => "login"
 }
 end
