@@ -38,6 +38,11 @@
   <%= g.hidden_field :creacion, :value => Time.now%>
 </div>
 
+<div class="field">
+  <%= g.label :Imagen %><br />
+  <%= g.text_field :imagen, autofocus: true%>
+</div>
+
 
   <div class="actions">
     <%= g.submit "Crear" %>
