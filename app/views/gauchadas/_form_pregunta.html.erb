@@ -1,25 +1,29 @@
 <%if !current_usuario.nil?%>
-  <%@comentario=Comentario.new%>
-  <%= bootstrap_form_for(@comentario) do |c| %>
+  <%if current_usuario!=gauchada.susario%>
+    <%@comentario=Comentario.new%>
+    <%= bootstrap_form_for(@comentario) do |c| %>
 
-    <div class="field">
-      <%= c.text_area :contenido,required: true, autofocus: true %>
-    </div>
+      <div class="field">
+        <%= c.text_area :contenido,required: true, autofocus: true %>
+      </div>
 
-    <div class="field">
-      <%= c.hidden_field :usuario_id, :value => current_usuario.id%>
-    </div>
+      <div class="field">
+        <%= c.hidden_field :usuario_id, :value => current_usuario.id%>
+      </div>
 
-    <div class="field">
-      <%= c.hidden_field :gauchada_id, :value => gauchada.id%>
-    </div>
+      <div class="field">
+        <%= c.hidden_field :gauchada_id, :value => gauchada.id%>
+      </div>
 
-    <div class="field">
-      <%= c.hidden_field :pregunta, :value => true%>
-    </div>
+      <div class="field">
+        <%= c.hidden_field :pregunta, :value => true%>
+      </div>
 
-    <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-      <i class="icon-ok icon-white"></i> Responder!
+      <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+        <i class="icon-ok icon-white"></i> Preguntar!
+      <% end %>
+    <% else %>
+      <%flash[:alert]="No puede hacer una pregunta sobre su propia gauchada!"%>
+      <%redirect_to @gauchada%>
     <% end %>
-  <% end %>
 <% end %>
