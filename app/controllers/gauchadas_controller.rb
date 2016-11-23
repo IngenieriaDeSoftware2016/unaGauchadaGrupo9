@@ -13,7 +13,8 @@ class GauchadasController < ApplicationController
   def edit
     @gauchada = Gauchada.find(params[:id])
     if current_usuario.nil?
-      flash[:alert]="Usted no tiene permisos para editar esta gauchada"
+      flash[:alert]="Acceso denegado"
+      redirect_to new_usuario_session_path
     end
     if(@gauchada.usuario_id!=current_usuario.id)
       flash[:alert]="Usted no tiene permisos para editar esta gauchada"
