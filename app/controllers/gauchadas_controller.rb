@@ -1,5 +1,5 @@
 class GauchadasController < ApplicationController
-  skip_before_action :authenticate_usuario!#, :only => :gauchadas_path
+  skip_before_action :authenticate_usuario!, :except => :gauchada_edit_path#, :only => :gauchadas_path
   #skip_before_filter :authenticate_usuario!, :only => :show
   #before_filter      :authenticate_usuario!, :only => :show
   def index
@@ -12,6 +12,9 @@ class GauchadasController < ApplicationController
 
   def edit
     @gauchada = Gauchada.find(params[:id])
+    if current_usuario.nil?
+      flash[:alert]="Usted no tiene permisos para editar esta gauchada"
+    end
     if(@gauchada.usuario_id!=current_usuario.id)
       flash[:alert]="Usted no tiene permisos para editar esta gauchada"
       redirect_to gauchada_path(@gauchada)
