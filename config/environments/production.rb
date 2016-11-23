@@ -81,30 +81,30 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Mailer configuration
-  config.action_mailer.default_url_options = { :host => 'una-gauchada-grupo9.herokuapp.com' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default :charset => "utf-8"
-  config.action_mailer.smtp_settings = {
-    address: "smtp.mail.yahoo.com",
-    port: 995,
-    domain: "una-gauchada-grupo9.herokuapp.com",
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: "unaguachada@yahoo.com",
-    password: "villaMirasol09"
-  }
+  # config.action_mailer.default_url_options = { :host => 'una-gauchada-grupo9.herokuapp.com' }
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.default :charset => "utf-8"
+  # config.action_mailer.smtp_settings = {
+  #   address: "smtp.mail.yahoo.com",
+  #   port: 995,
+  #   domain: "una-gauchada-grupo9.herokuapp.com",
+  #   authentication: "plain",
+  #   enable_starttls_auto: true,
+  #   user_name: "unaguachada@yahoo.com",
+  #   password: "villaMirasol09"
+  # }
 
-  #config.action_mailer.default_url_options = { :host => "una-gauchada-grupo9.herokuapp.com" }
-  #config.action_mailer.delivery_method = :smtp
-  #config.action_mailer.smtp_settings = {
-    #:user_name => '9c2464b278997f',
-    #:password => 'c39ac373cd1c99',
-    #:address => 'mailtrap.io',
-    #:domain => 'mailtrap.io',
-    #:port => '2525',
-    #:authentication => :cram_md5
-  #}
+  config.action_mailer.default_url_options = { :host => "una-gauchada-grupo9.herokuapp.com" }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :user_name => '9c2464b278997f',
+    :password => 'c39ac373cd1c99',
+    :address => 'mailtrap.io',
+    :domain => 'mailtrap.io',
+    :port => '2525',
+    :authentication => :cram_md5
+  }
 
 end
