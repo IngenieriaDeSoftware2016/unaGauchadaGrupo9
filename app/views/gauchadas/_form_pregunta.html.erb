@@ -21,6 +21,7 @@
 
       <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
         <i class="icon-ok icon-white"></i> Preguntar!
+        <% end %>
     <% end %>
   <% else %>
     <%flash[:alert]="No puede hacer una pregunta sobre su propia gauchada!"%>
