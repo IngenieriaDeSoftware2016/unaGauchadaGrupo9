@@ -105,11 +105,12 @@
       </div>
       <div class="comment-tabs">
         <ul class="nav nav-tabs" role="tablist">
-          <li class="active"><a href="#pregunta" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Preguntas echa por la comunidad</h4></a></li>
-          <li><a href="#respuesta" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Has una pregunta</h4></a></li>
+          <li class="active"><a href="#preguntas" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Preguntas echa por la comunidad</h4></a></li>
+          <li><a href="#preguntar" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Has una pregunta</h4></a></li>
         </ul>
         <div class="tab-content">
-          <div class="tab-pane active" id="pregunta">
+          <div class="tab-pane active" id="preguntas">
+
             <ul class="media-list">
               <li class="media">
                 <a class="pull-left" href="#">
@@ -149,8 +150,9 @@
                 </div>
               </li>
             </ul>
+
           </div>
-          <div class="tab-pane" id="pregunta">
+          <div class="tab-pane" id="preguntar">
             <form action="#" method="post" class="form-horizontal" id="commentForm" role="form">
               <div class="form-group">
                 <label for="email" class="col-sm-2 control-label">Pregunta</label>
@@ -179,7 +181,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
-                  <h4 class="modal-title" id="myModalLabel">Postulacion</h4>
+                  <h4 class="modal-title" id="myModalLabel">Respuesta</h4>
               </div>
               <div class="modal-body">
                   <%= render 'form_postulacion', gauchada: @gauchada %>
