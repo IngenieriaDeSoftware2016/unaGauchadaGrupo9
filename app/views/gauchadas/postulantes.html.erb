@@ -13,7 +13,7 @@
 </div> -->
 <div class="col-lg-4 col-md-4 col-xs-6 thumb">
   <a class="thumbnail">
-    <img class="img-responsive" src="<%=Usuario.find(p.usuario_id).imagen%>" alt="">
+    <img class="img-responsive" style="width: 200px; height: 200px" src="<%=Usuario.find(p.usuario_id).imagen%>" alt="">
   </a>
   <div class = "caption" style="width: 200px; height: 200px">
       <h4>Nombre: <%=Usuario.find(p.usuario_id).nombre%></h4>
@@ -23,5 +23,6 @@
       <%= link_to '<i class="glyphicon glyphicon-thumbs-up"></i>'.html_safe, aceptar_postulante_path(p), class: 'btn btn-success'%>
   </div>
 </div>
+
 
 <%end%>
