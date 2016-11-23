@@ -23,6 +23,11 @@
     <%= g.hidden_field :usuario_id, :value => current_usuario.id%>
 </div>
 
+<div class="field">
+  <%= g.label :Imagen %><br />
+  <%= g.text_field :imagen, autofocus: true%>
+</div>
+
 <div class="actions">
     <%= g.submit "Actualizar" %>
 </div>

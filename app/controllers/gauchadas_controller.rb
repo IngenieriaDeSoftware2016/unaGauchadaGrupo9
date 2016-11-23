@@ -73,8 +73,8 @@ end
 private
 
  def gauchada_params
-   if(:imagen="")
-     :imagen="asd"
+   if(:imagen=='')
+     :imagen='asd'
    end
     params.require(:gauchada).permit(:usuario_id, :creacion, :nombre, :descripcion, :localidad, :vencimiento,:imagen)
  end
