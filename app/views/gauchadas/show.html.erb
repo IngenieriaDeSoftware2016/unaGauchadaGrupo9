@@ -121,7 +121,7 @@
                     <div class="well well-lg">
                       <h4 class="media-heading text-uppercase reviews"><%=c.usuario.nombre%> </h4>
                       <ul class="media-date text-uppercase reviews list-inline">
-                        <li><%=c.created_at%></li>
+                        <li><%=l(c.created_at, format: '%d de %B de %Y')%></li>
                       </ul>
                       <p class="media-comment">
                         <%=c.contenido%>
@@ -137,13 +137,13 @@
                       <ul class="media-list">
                         <li class="media media-replied">
                           <a class="pull-left" href="#">
-                            <img class="media-object img-circle" style="width: 200px; height: 200px" src="<%=r.usuario.imagen%>" alt="profile">
+                            <img class="media-object img-circle" style="width: 100px; height: 100px" src="<%=r.usuario.imagen%>" alt="profile">
                           </a>
                           <div class="media-body">
                             <div class="well well-lg">
                               <h4 class="media-heading text-uppercase reviews"><span class="glyphicon glyphicon-share-alt"></span> <%=r.usuario.nombre%></h4>
                                 <ul class="media-date text-uppercase reviews list-inline">
-                                  <li><%=r.created_at%></li>
+                                  <li><%=l(r.created_at, format: '%d de %B de %Y')%></li>
                                 </ul>
                                 <p class="media-comment">
                                   <%=r.contenido%>
