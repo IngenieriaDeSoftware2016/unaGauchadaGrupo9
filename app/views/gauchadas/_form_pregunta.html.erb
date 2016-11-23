@@ -25,6 +25,6 @@
     <% end %>
   <% else %>
     <%flash[:alert]="No puede hacer una pregunta sobre su propia gauchada!"%>
-    <%redirect_to @gauchada%>
+    <%return @gauchada%>
   <% end %>
 <% end %>
