@@ -89,5 +89,11 @@ Rails.application.configure do
   #:domain => 'mailtrap.io',
   #:port => '2525',
   #:authentication => :cram_md5
+  :user_name => 'unagauchada@yahoo.com',
+  :password => 'villaMirasol09',
+  :address => 'smtp.yahoo.com',
+  :domain => 'una-gauchada-grupo9.herokuapp.com',
+  :port => '25',
+  :authentication => :plain
 }
 end
