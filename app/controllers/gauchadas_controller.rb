@@ -53,8 +53,9 @@ class GauchadasController < ApplicationController
           @gauchada.imagen="https://s22.postimg.org/cs5ohupgx/logo.png"
         end
         if(@gauchada.vencimiento<Date.now)
-          @gauchada.vencimiento=10.days.from_now
-          flash[:alert]="La fecha de vencimiento no puede ser menor a 5 dias desde su publicacion o modificacion"
+          @gauchada.vencimiento=5.days.from_now
+          flash[:alert]="La fecha de vencimiento no puede ser menor a 5 dias desde su publicacion o modificacion.
+           Se establece como fecha de vencimiento 5 dias a partir de hoy"
         end
         flash[:notice]="Gauchada actualizado"
       else
