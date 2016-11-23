@@ -6,9 +6,17 @@ class RegistrationsController < Devise::RegistrationsController
     super
     if @usuario.imagen==""
       @usuario.imagen="http://www.cheap-accountants-in-london.co.uk/wp-content/uploads/2015/07/User-Avatar.png"
+      @usuario.save
     end
   end
 
+  def update
+    super
+    if @usuario.imagen==""
+      @usuario.imagen="http://www.cheap-accountants-in-london.co.uk/wp-content/uploads/2015/07/User-Avatar.png"
+      @usuario.save
+    end
+  end
   private
 
   # my custom fields are :name, :heard_how
