@@ -7,7 +7,6 @@ class RegistrationsController < Devise::RegistrationsController
     if @usuario.imagen==""
       @usuario.imagen="http://www.cheap-accountants-in-london.co.uk/wp-content/uploads/2015/07/User-Avatar.png"
     end
-    redirect_to usuario_path(@usuario)
   end
 
   private
@@ -22,6 +21,12 @@ class RegistrationsController < Devise::RegistrationsController
     allow = [:email, :password, :password_confirmation, :nombre,:edad ,:rol,:telefono,:localidad,:puntaje,:imagen]
     params.require(resource_name).permit(allow)
   end
+
+  protected
+
+    def after_update_path_for(resource)
+      user_path(resource)
+    end
 
 
 
