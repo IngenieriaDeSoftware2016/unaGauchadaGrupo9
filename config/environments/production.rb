@@ -80,9 +80,25 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { :host => "una-gauchada-grupo9.herokuapp.com" }
+  # Mailer configuration
+  config.action_mailer.default_url_options = { :host => 'una-gauchada-grupo9.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
+    address: "smtp.mail.yahoo.com",
+    port: 587,
+    domain: "una-gauchada-grupo9.herokuapp.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "unaguachada@yahoo.com",
+    password: "villaMirasol09"
+  }
+
+  #config.action_mailer.default_url_options = { :host => "una-gauchada-grupo9.herokuapp.com" }
+  #config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.smtp_settings = {
   #:user_name => '9c2464b278997f',
   #:password => 'c39ac373cd1c99',
   #:address => 'mailtrap.io',
@@ -90,16 +106,5 @@ Rails.application.configure do
   #:port => '2525',
   #:authentication => :cram_md5
 }
-require "smtp_tls"
 
-ActionMailer::Base.raise_delivery_errors = false
-ActionMailer::Base.delivery_method = :smtp
-ActionMailer::Base.server_settings = {
-:address => "smtp.yahoo.com",
-:port => 587,
-:domain => 'yahoo.com',
-:user_name => "unagauchada@yahoo.com",
-:password => "villaMirasol09",
-:authentication => :plain
-}
 end
