@@ -89,11 +89,17 @@ Rails.application.configure do
   #:domain => 'mailtrap.io',
   #:port => '2525',
   #:authentication => :cram_md5
-  :user_name => 'unagauchada@yahoo.com',
-  :password => 'villaMirasol09',
-  :address => 'smtp.mail.yahoo.com',
-  :domain => 'una-gauchada-grupo9.herokuapp.com',
-  :port => '465',
-  :authentication => :login
+}
+require "smtp_tls"
+
+ActionMailer::Base.raise_delivery_errors = false
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.server_settings = {
+:address => "smtp.yahoo.com",
+:port => 587,
+:domain => 'yahoo.com',
+:user_name => "unagauchada@yahoo.com",
+:password => "villaMirasol09",
+:authentication => :plain
 }
 end
