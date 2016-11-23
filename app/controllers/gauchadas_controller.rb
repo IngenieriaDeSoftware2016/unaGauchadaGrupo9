@@ -74,7 +74,6 @@ class GauchadasController < ApplicationController
         flash[:error]=message
         #flash[:error]= @logro.errors.full_messages.to_sentence
       end
-    end
     redirect_to gauchada_path(@gauchada)
   end
 
