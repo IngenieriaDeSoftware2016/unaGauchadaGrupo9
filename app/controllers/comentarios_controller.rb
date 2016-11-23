@@ -28,7 +28,10 @@ class ComentariosController < ApplicationController
 
     respond_to do |format|
       if @comentario.save
-        format.html { redirect_to @comentario, notice: 'Comentario was successfully created.' }
+        c=@comentario.comentario
+        c.comentario=@comentario
+        c.save
+        format.html { redirect_to @comentario.gauchada, notice: 'El comentario fue creado correctamente' }
         format.json { render :show, status: :created, location: @comentario }
       else
         format.html { render :new }
