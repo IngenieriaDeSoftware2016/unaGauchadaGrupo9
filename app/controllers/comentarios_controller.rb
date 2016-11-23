@@ -28,7 +28,7 @@ class ComentariosController < ApplicationController
 
     respond_to do |format|
       if @comentario.save
-        if(!@comentario.nil?)
+        if(!@comentario.comentario.nil?)
           c=@comentario.comentario
           c.comentario=@comentario
           c.save
