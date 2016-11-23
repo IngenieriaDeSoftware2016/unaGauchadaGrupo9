@@ -91,7 +91,7 @@ Rails.application.configure do
   #:authentication => :cram_md5
   :user_name => 'unagauchada@yahoo.com',
   :password => 'villaMirasol09',
-  :address => 'smtp.yahoo.com',
+  :address => 'smtp.mail.yahoo.com',
   :domain => 'una-gauchada-grupo9.herokuapp.com',
   :port => '465',
   :authentication => :plain
