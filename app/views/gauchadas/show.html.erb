@@ -126,7 +126,8 @@
                       <p class="media-comment">
                         <%=c.contenido%>
                       </p>
-                      <%if(c.comentario==nil)%>
+                      <%if(!current_usuario?nil)%>
+                      <%if(c.comentario==nil&&c.usuario==current_usuario)%>
                         <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#responder">
                           Responder
                         </button>
@@ -150,7 +151,7 @@
                                 </div>
                             </div>
                         </div>
-
+                      <%end%>
                       <%end%>
                     </div>
                   </div>
