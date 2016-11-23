@@ -8,6 +8,7 @@ class GauchadasController < ApplicationController
 
   def show
     @gauchada = Gauchada.find(params[:id])
+    @comentarios=@gauchada.comentarios
   end
 
   def edit
