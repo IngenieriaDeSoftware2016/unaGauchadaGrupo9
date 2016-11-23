@@ -3,7 +3,7 @@ class GauchadasController < ApplicationController
   #skip_before_filter :authenticate_usuario!, :only => :show
   #before_filter      :authenticate_usuario!, :only => :show
   def index
-    @gauchadas=Gauchada.order(:created_at desc)
+    @gauchadas=Gauchada.order('created_at DESC')
   end
 
   def show
