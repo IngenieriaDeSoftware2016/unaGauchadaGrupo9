@@ -26,6 +26,10 @@ class GauchadasController < ApplicationController
         if @gauchada.imagen==""
           @gauchada.imagen="https://s22.postimg.org/cs5ohupgx/logo.png"
         end
+        if(@gauchada.vencimiento<Date.now)
+          @gauchada.vencimiento=10.days.from_now
+          flash[:alert]="La fecha de vencimiento no puede ser menor a 5 dias desde su publicacion o modificacion"
+        end
         if(@gauchada.save)
           flash[:notice]="Gauchada publicada"
         else
@@ -46,6 +50,10 @@ class GauchadasController < ApplicationController
       if(@gauchada.update(gauchada_params))
         if @gauchada.imagen==""
           @gauchada.imagen="https://s22.postimg.org/cs5ohupgx/logo.png"
+        end
+        if(@gauchada.vencimiento<Date.now)
+          @gauchada.vencimiento=10.days.from_now
+          flash[:alert]="La fecha de vencimiento no puede ser menor a 5 dias desde su publicacion o modificacion"
         end
         flash[:notice]="Gauchada actualizado"
       else
