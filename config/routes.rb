@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :comentarios
   get 'imagen/new'
 
   get 'imagen/create'
