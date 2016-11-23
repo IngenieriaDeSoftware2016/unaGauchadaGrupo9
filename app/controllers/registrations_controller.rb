@@ -7,7 +7,7 @@ class RegistrationsController < Devise::RegistrationsController
     if @usuario.imagen==""
       @usuario.imagen="http://www.cheap-accountants-in-london.co.uk/wp-content/uploads/2015/07/User-Avatar.png"
     end
-    redirect_to usuario_path
+    redirect_to usuario_path(@usuario)
   end
 
   private
