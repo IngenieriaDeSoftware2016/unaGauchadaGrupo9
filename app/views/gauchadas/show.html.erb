@@ -72,7 +72,7 @@
           <h4>Contacto postulante:</h4>
           <%@gauchada.postulantes.each do |p|%>
             <%if p.estado%>
-              <i>Email:<%= l(Usuario.find(p.usuario_id).email) %></i>
+              <i>Email:<%= Usuario.find(p.usuario_id).email%></i>
             <% end %>
           <% end %>
         <% end %>
