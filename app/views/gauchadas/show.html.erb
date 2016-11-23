@@ -95,6 +95,8 @@
   </div>
 </div>
 
+
+<!-- Comentarios -->
 <div>
   <div class="row">
     <div class="col-sm-12" id="comentarios">
@@ -103,7 +105,7 @@
       </div>
       <div class="comment-tabs">
         <ul class="nav nav-tabs" role="tablist">
-          <li class="active"><a href="#comments-logout" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Preguntas echa por la comunidad</h4></a></li>
+          <li class="active"><a href="comentarios" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Preguntas echa por la comunidad</h4></a></li>
           <li><a href="#add-comment" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Has una pregunta</h4></a></li>
         </ul>
         <div class="tab-content">
@@ -117,14 +119,12 @@
                   <div class="well well-lg">
                     <h4 class="media-heading text-uppercase reviews">Marco </h4>
                     <ul class="media-date text-uppercase reviews list-inline">
-                      <li class="dd">22</li>
-                      <li class="mm">09</li>
-                      <li class="aaaa">2014</li>
+                      <li>22</li>
                     </ul>
                     <p class="media-comment">
                       Great snippet! Thanks for sharing.
                     </p>
-                    <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Responder</a>
+                    <a class="btn btn-info btn-circle text-uppercase" href="#respuesta" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Responder</a>
                   </div>
                 </div>
                 <div class="collapse" id="replyOne">
@@ -172,4 +172,24 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Modal respuesta-->
+  <div class="modal fade" id="respuesta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="myModalLabel">Postulacion</h4>
+              </div>
+              <div class="modal-body">
+                  <%= render 'form_postulacion', gauchada: @gauchada %>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">No, mejor no</button>
+              </div>
+          </div>
+      </div>
   </div>
