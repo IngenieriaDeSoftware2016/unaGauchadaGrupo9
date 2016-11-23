@@ -24,7 +24,6 @@
         <% end %>
     <% end %>
   <% else %>
-    <%flash[:alert]="No puede hacer una pregunta sobre su propia gauchada!"%>
-    <%return @gauchada%>
+    <h3>No se pueden hacer preguntas sobre gauchadas propias</h3>
   <% end %>
 <% end %>
