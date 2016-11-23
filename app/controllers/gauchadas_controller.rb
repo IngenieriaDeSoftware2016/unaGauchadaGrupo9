@@ -48,6 +48,9 @@ class GauchadasController < ApplicationController
   end
   def update
     @gauchada=Gauchada.find(params[:id])
+    if(@gauchada.estado=="en proceso")
+      flash[:alert]="No puede editarse una gauchada en proceso"
+    else
       if(@gauchada.update(gauchada_params))
         if @gauchada.imagen==""
           @gauchada.imagen="https://s22.postimg.org/cs5ohupgx/logo.png"
@@ -67,7 +70,8 @@ class GauchadasController < ApplicationController
         flash[:error]=message
         #flash[:error]= @logro.errors.full_messages.to_sentence
       end
-      redirect_to gauchada_path(@gauchada)
+    end
+    redirect_to gauchada_path(@gauchada)
   end
 
   def postulantes
