@@ -48,27 +48,31 @@ class GauchadasController < ApplicationController
   end
   def update
     @gauchada=Gauchada.find(params[:id])
-    if(@gauchada.estado=="en proceso")
-      flash[:alert]="No puede editarse una gauchada en proceso"
+    if(@gauchada.usuario_id!=current_usuario.id)
+      flash[:alert]="Usted no tiene permisos para editar esta gauchada"
     else
-      if(@gauchada.update(gauchada_params))
-        if @gauchada.imagen==""
-          @gauchada.imagen="https://s22.postimg.org/cs5ohupgx/logo.png"
-        end
-        if(@gauchada.vencimiento<Time.now)
-          @gauchada.vencimiento=5.days.from_now
-          @gauchada.save
-          flash[:alert]="La fecha de vencimiento no puede ser menor a 5 dias desde su publicacion o modificacion.
-           Se establece como fecha de vencimiento 5 dias a partir de hoy"
-        end
-        flash[:notice]="Gauchada actualizado"
+      if(@gauchada.estado=="en proceso")
+        flash[:alert]="No puede editarse una gauchada en proceso"
       else
-        message=""
-        @gauchada.errors.full_messages.each do |msg|
-          message=message+msg+"\n"
+        if(@gauchada.update(gauchada_params))
+          if @gauchada.imagen==""
+            @gauchada.imagen="https://s22.postimg.org/cs5ohupgx/logo.png"
+          end
+          if(@gauchada.vencimiento<Time.now)
+            @gauchada.vencimiento=5.days.from_now
+            @gauchada.save
+            flash[:alert]="La fecha de vencimiento no puede ser menor a 5 dias desde su publicacion o modificacion.
+            Se establece como fecha de vencimiento 5 dias a partir de hoy"
+         end
+          flash[:notice]="Gauchada actualizado"
+        else
+          message=""
+          @gauchada.errors.full_messages.each do |msg|
+            message=message+msg+"\n"
+          end
+          flash[:error]=message
+          #flash[:error]= @logro.errors.full_messages.to_sentence
         end
-        flash[:error]=message
-        #flash[:error]= @logro.errors.full_messages.to_sentence
       end
     end
     redirect_to gauchada_path(@gauchada)
