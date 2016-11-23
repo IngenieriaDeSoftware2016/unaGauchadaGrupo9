@@ -2,6 +2,8 @@
    <%= link_to 'Crear nueva gauchada', new_gauchada_path, class: 'btn btn-info'%>
 <% end %>
 </br>
+</br>
+</br>
 <!-- <table class="table">
   <thead>
     <tr>
@@ -30,12 +32,13 @@
 <% Gauchada.all.each do |gauchada| %>
 <div class="col-lg-4 col-md-4 col-xs-6 thumb">
   <a class="thumbnail">
-    <img class="img-responsive" src="<%=gauchada.imagen%>" alt="">
+    <img class="img-responsive" style="width: 200px; height: 200px" src="<%=gauchada.imagen%>" alt="">
   </a>
-  <div class = "caption">
+  <div class = "caption" style="width: 200px; height: 200px">
     <%u=Usuario.find(gauchada.usuario_id)%>
     <td><%= u.nombre %>: </td>
     <td><%= gauchada.descripcion %></td>
+    </br>
     <%= link_to '<i class="glyphicon glyphicon-ok">Ver mas</i>'.html_safe, gauchada_path(gauchada), class: 'btn btn-success'%>
   </div>
 </div>
