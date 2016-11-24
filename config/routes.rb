@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   get '/under_construction' , to: 'mains#under_construction'
   get '/buscar' , to: 'mains#search'
   get '/usuario' , to: 'usuarios#show'
+  get '/usuario/misgauchadas' , to: 'usuarios#misgauchadas'
 
   devise_for :usuarios, :controllers => { registrations: 'registrations' }
 
