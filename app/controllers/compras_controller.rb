@@ -6,6 +6,7 @@ class ComprasController < ApplicationController
     @inicio=params[:inicio]
     @fin=params[:fin]
     @compras=Compra.where(created_at: @inicio..@fin)
+    @resultado=10
   end
 
   def show
