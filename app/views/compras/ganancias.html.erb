@@ -8,9 +8,13 @@
 </div>
 <%= submit_tag "Calcular", name: nil, class: "btn btn-primary btn-md" %>
 <% end %>
-<% $('#myModal').modal({ show: false})%>
+<div class="source-code runnable">
+  $('#myModal').modal({ show: false})
+</div>
 <% !if(@resultado.nil?) %>
-  <%$('#myModal').modal('show')%>
+  <div class="source-code runnable">
+    $('#myModal').modal('show')
+  </div>
 <% end %>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
