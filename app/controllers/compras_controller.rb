@@ -5,7 +5,7 @@ class ComprasController < ApplicationController
   def reporte_compras
     @inicio=params[:inicio]
     @fin=params[:fin]
-    @compras=Compra.where(:created_at @inicio..@fin)
+    @compras=Compra.where(created_at: @inicio..@fin)
   end
 
   def show
