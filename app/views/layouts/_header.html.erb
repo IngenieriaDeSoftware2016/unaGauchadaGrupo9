@@ -16,8 +16,7 @@
           <%if current_usuario!=nil%>
             <%if current_usuario.admin%>
               <li><%= link_to 'Menu Logros', logros_path, class: 'navbar-link'%></li>
-              <li><%= link_to 'Menu Compras', under_construction_path, class: 'navbar-link'%></li>
-              <li><%= link_to 'Menu Gauchadas', under_construction_path, class: 'navbar-link'%></li>
+              <li><%= link_to 'Reporte Compras', reporte_compras_path, class: 'navbar-link'%></li>
             <%else%>
               <li><%= link_to 'Compras', new_compra_path%></li>
             <% end %>

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :comentarios
   get 'imagen/new'
 
+  get 'compras/ganancias'
+
   get 'imagen/create'
 
   get 'imagen/update'
@@ -37,6 +39,7 @@ Rails.application.routes.draw do
   get '/buscar' , to: 'mains#search'
   get '/usuario' , to: 'usuarios#show'
   get '/usuario/misgauchadas' , to: 'usuarios#misgauchadas', :as => :misgauchadas
+  get '/compras/ganancias' , to: 'compras#reporte_compras', :as => :reporte_compras
 
   devise_for :usuarios, :controllers => { registrations: 'registrations' }
 

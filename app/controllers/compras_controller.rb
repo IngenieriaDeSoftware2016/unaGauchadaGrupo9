@@ -2,6 +2,10 @@ class ComprasController < ApplicationController
   def index
   end
 
+  def reporte_compras
+    @compras=Compra.where(:created_at params[:inicio]..params[:fin])
+  end
+
   def show
     @compra = Compra.find(current_usuario.id)
   end
