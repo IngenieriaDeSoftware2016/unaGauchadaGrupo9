@@ -12,6 +12,7 @@
               <li><%= link_to "Logout", destroy_usuario_session_path, method: :delete%></li>
             </ul>
           </li>
+          <li><%= link_to "Mis Gauchadas", misgauchadas_path%></li>
           <%if current_usuario!=nil%>
             <%if current_usuario.admin%>
               <li><%= link_to 'Menu Logros', logros_path, class: 'navbar-link'%></li>

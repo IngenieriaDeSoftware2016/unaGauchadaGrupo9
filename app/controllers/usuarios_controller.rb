@@ -20,6 +20,10 @@ class UsuariosController < ApplicationController
   def edit
   end
 
+  def misgauchadas
+    @gauchadas=current_usuario.gauchadas
+  end
+
   def admin
     #redirect_to "/", notice: 'You dont have enough permissions to be here' unless current_usuario.admin?
     #unless current_usuario.admin?
