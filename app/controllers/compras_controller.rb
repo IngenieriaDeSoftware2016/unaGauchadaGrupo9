@@ -1,12 +1,15 @@
-class ComprasController < ApplicationController
+  class ComprasController < ApplicationController
   def index
   end
 
-  def reporte_compras
-    @inicio=params[:inicio]
-    @fin=params[:fin]
-    @compras=Compra.where(created_at: @inicio..@fin)
-    @resultado=10
+  def reporte
+    if(current_usuario.admin)
+      @compras=Compra.where(created_at: Date.yesterday..Date.tomorrow)
+      @compras=Compra.where(created_at: Date.new(params[:inicio]['(1i)'].to_i,params[:inicio]['(2i)'].to_i,params[:inicio]['(3i)'].to_i)..Date.new(params[:fin]['(1i)'].to_i,params[:fin]['(2i)'].to_i,params[:fin]['(3i)'].to_i))
+    else
+      flash[:error]="Acceso denegado"
+      redirect_to root_path
+    end
   end
 
   def show
@@ -37,6 +40,14 @@ class ComprasController < ApplicationController
 
   def edit
     @compra = Compra.find(params[:id])
+  end
+
+
+  def ganancias
+    if(!current_usuario.admin)
+      flash[:error]="Acceso denegado"
+      redirect_to root_path
+    end
   end
 
   private

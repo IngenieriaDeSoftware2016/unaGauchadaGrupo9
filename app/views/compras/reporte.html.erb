@@ -1,0 +1,31 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Precio unitaio</th>
+      <th>Cantidad de puntos</th>
+      <th>Precio Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% total=0 %>
+    <% @compras.each do |c| %>
+    <tr>
+    <td><%= l(c.created_at, format: '%d de %B de %Y') %></td>
+    <td><%= c.precio_unitario %></td>
+    <td><%= c.cantidad_puntos %></td>
+    <td><%= c.precio_total%></td>
+    </tr>
+    <% total=total+c.precio_total %>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>Total</th>
+      <th></th>
+      <th></th>
+      <th><%= total %></th>
+    </tr>
+  </tfoot>
+</table>
+<%= link_to 'Volver', :back , class: 'btn btn-info'%>

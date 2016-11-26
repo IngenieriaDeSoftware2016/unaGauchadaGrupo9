@@ -39,7 +39,9 @@ Rails.application.routes.draw do
   get '/buscar' , to: 'mains#search'
   get '/usuario' , to: 'usuarios#show'
   get '/usuario/misgauchadas' , to: 'usuarios#misgauchadas', :as => :misgauchadas
-  get '/compras/ganancias' , to: 'compras#reporte_compras', :as => :reporte_compras
+  get '/compras/ganancias' , to: 'compras#ganancias', :as => :ganancias_compras
+
+  get '/compras/reporte' , to: 'compras#reporte', :as => :reporte_compras
 
   devise_for :usuarios, :controllers => { registrations: 'registrations' }
 
