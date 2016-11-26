@@ -20,6 +20,17 @@ class UsuariosController < ApplicationController
   def edit
   end
 
+  def ranking
+    if(!current_usuario.nil?)
+      if(current_usuario.admin)
+        @usuarios=Usuario.order(puntaje: :desc)
+      else
+        flash[:error]="Acceso denegado"
+        redirect_to root_path
+      end
+    end
+  end
+
   def misgauchadas
     @gauchadas=current_usuario.gauchadas
   end

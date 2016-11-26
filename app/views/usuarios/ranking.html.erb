@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Posicion</th>
+      <th>Nombre</th>
+      <th>Puntaje</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%i=1%>
+    <% @usuarios.each do |l| %>
+    <tr>
+    <td><%=i%></td>
+    <td><%= l.nombre %></td>
+    <td><%= l.puntaje %></td>
+    <%i=i+1%>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Volver', :back, class: 'btn btn-info'%>

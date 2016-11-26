@@ -25,7 +25,9 @@ Rails.application.routes.draw do
   get 'compra/new'
   get 'compra/edit'
 
+
   get "gauchadas/postulacion" => 'gauchadas#postulacion', :as => :postulacion
+  get "usuarios/ranking" => 'usuarios#ranking', :as => :ranking
 
   #get "gauchadas/:id/postulantes" => 'gauchadas#postulantes', :as => :gauchadas_postulantes
   controller :gauchadas do

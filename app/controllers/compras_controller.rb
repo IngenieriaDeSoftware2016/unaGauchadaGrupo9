@@ -3,12 +3,14 @@
   end
 
   def reporte
-    if(current_usuario.admin)
-      @compras=Compra.where(created_at: Date.yesterday..Date.tomorrow)
-      @compras=Compra.where(created_at: Date.new(params[:inicio]['(1i)'].to_i,params[:inicio]['(2i)'].to_i,params[:inicio]['(3i)'].to_i)..Date.new(params[:fin]['(1i)'].to_i,params[:fin]['(2i)'].to_i,params[:fin]['(3i)'].to_i))
-    else
-      flash[:error]="Acceso denegado"
-      redirect_to root_path
+    if(!current_usuario.nil?)
+      if(current_usuario.admin)
+        @compras=Compra.where(created_at: Date.yesterday..Date.tomorrow)
+        @compras=Compra.where(created_at: Date.new(params[:inicio]['(1i)'].to_i,params[:inicio]['(2i)'].to_i,params[:inicio]['(3i)'].to_i)..Date.new(params[:fin]['(1i)'].to_i,params[:fin]['(2i)'].to_i,params[:fin]['(3i)'].to_i))
+      else
+        flash[:error]="Acceso denegado"
+        redirect_to root_path
+      end
     end
   end
 
@@ -44,9 +46,11 @@
 
 
   def ganancias
-    if(!current_usuario.admin)
-      flash[:error]="Acceso denegado"
-      redirect_to root_path
+    if(!current_usuario.nil?)
+      if(!current_usuario.admin)
+        flash[:error]="Acceso denegado"
+        redirect_to root_path
+      end
     end
   end
 
