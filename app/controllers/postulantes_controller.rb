@@ -36,7 +36,20 @@ class PostulantesController < ApplicationController
 
   def index
 
+    @postulaciones_ganadas=current_usuario.postulantes.where(estado: true)
+    @postulaciones=current_usuario.postulantes.where(estado: false)
+    @postulaciones_activas=Set.new
+    @postulaciones_finalizadas=Set.new
+
+    @postulaciones.each do |p|
+      if(p.gauchada.estado=="finalizada")
+        @postulaciones_finalizadas.add(p)
+      else
+        @postulaciones_activas.add(p)
+      end
+    end
   end
+
 
 
   def show

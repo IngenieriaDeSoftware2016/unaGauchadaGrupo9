@@ -1,5 +1,5 @@
 <%if !current_usuario.nil?%>
-  <%if current_usuario!=gauchada.usuario%>
+  <%if current_usuario!=gauchada.usuario && @gauchada.estado!="finalizada"%>
     <%@comentario=Comentario.new%>
     <%= bootstrap_form_for(@comentario) do |c| %>
 
@@ -24,7 +24,11 @@
         <% end %>
     <% end %>
   <% else %>
-    <h3>No se pueden hacer preguntas sobre gauchadas propias</h3>
+    <%if current_usuario==gauchada.usuario%>
+      <h3>No se pueden hacer preguntas sobre gauchadas propias</h3>
+    <% else %>
+      <h3>No se pueden hacer preguntas sobre gauchadas finalizadas</h3>
+    <% end %>
   <% end %>
 <% else %>
   <h4>Debe estar logueado para hacer una pregunta</h4>

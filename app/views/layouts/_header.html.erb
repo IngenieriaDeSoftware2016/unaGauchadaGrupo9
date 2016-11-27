@@ -12,12 +12,23 @@
               <li><%= link_to "Logout", destroy_usuario_session_path, method: :delete%></li>
             </ul>
           </li>
-          <li><%= link_to "Mis Gauchadas", misgauchadas_path%></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu Gauchadas <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Mis Gauchadas", misgauchadas_path%></li>
+              <li><%= link_to 'Mis Postulaciones', postulantes_path%></li>
+              <li><%= link_to 'Gauchadas Completadas', misgauchadascompletadas_postulaciones_path%></li>
+            </ul>
+          </li>
+
           <%if current_usuario!=nil%>
             <%if current_usuario.admin%>
-              <li><%= link_to 'Menu Logros', logros_path, class: 'navbar-link'%></li>
-              <li><%= link_to 'Reporte Compras', ganancias_compras_path(@c, :precio_total => nil), class: 'navbar-link'%></li>
-              <li><%= link_to 'Ranking de Usuarios', ranking_path, class: 'navbar-link'%></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu Admin <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Reporte Logros', logros_path, class: 'navbar-link'%></li>
+                <li><%= link_to 'Reporte Compras', ganancias_compras_path(@c, :precio_total => nil), class: 'navbar-link'%></li>
+                <li><%= link_to 'Ranking de Usuarios', ranking_path, class: 'navbar-link'%></li>
+              </ul>
+            </li>
             <%else%>
               <li><%= link_to 'Compras', new_compra_path%></li>
             <% end %>

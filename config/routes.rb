@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   get '/buscar' , to: 'mains#search'
   get '/usuario' , to: 'usuarios#show'
   get '/usuario/misgauchadas' , to: 'usuarios#misgauchadas', :as => :misgauchadas
+  get '/usuario/misgauchadascompletadas' , to: 'gauchadas#misgauchadascompletadas', :as => :misgauchadascompletadas_postulaciones
   get '/compras/ganancias' , to: 'compras#ganancias', :as => :ganancias_compras
 
   get '/compras/reporte' , to: 'compras#reporte', :as => :reporte_compras

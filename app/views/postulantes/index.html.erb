@@ -1,5 +1,70 @@
-<h1>Postulante#index</h1>
-<p>Find me in app/views/postulante/index.html.erb</p>
-<% @gauchada.postulantes.each do |p| %>
-<%= render postulante_path(p) %>
-<%end%>
+<div>
+  <div class="row">
+    <div class="col-sm-12" id="postulaciones">
+      <div class="page-header">
+        <h3 class="reviews">Postulaciones</h3>
+      </div>
+      <div class="comment-tabs">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="active"><a href="#ganadas" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Postulaciones ganadas en resolucion</h4></a></li>
+          <li><a href="#activas" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Postulaciones activas</h4></a></li>
+          <li><a href="#finalizadas" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Postulaciones finalizadas</h4></a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="ganadas">
+            <% @postulaciones_ganadas.each do |p| %>
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+              <a class="thumbnail">
+                <img class="img-responsive" style="width: 200px; height: 200px" src="<%=p.gauchada.imagen%>" alt="">
+              </a>
+              <div class = "caption" style="width: 200px; height: 200px">
+                <%u=Usuario.find(p.gauchada.usuario_id)%>
+                <td><%= u.nombre %>: </td>
+                <td><%= truncate(p.gauchada.descripcion, length: 50) %></td>
+                </br>
+                <td>Contacto: <%= u.email %> </td>
+                </br>
+                <%= link_to '<i class="glyphicon glyphicon-ok"> Ver mas</i>'.html_safe, gauchada_path(p.gauchada), class: 'btn btn-success'%>
+              </div>
+            </div>
+            <%end%>
+          </div>
+          <div class="tab-pane" id="activas">
+            <% @postulaciones_activas.each do |p| %>
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+              <a class="thumbnail">
+                <img class="img-responsive" style="width: 200px; height: 200px" src="<%=p.gauchada.imagen%>" alt="">
+              </a>
+              <div class = "caption" style="width: 200px; height: 200px">
+                <%u=Usuario.find(p.gauchada.usuario_id)%>
+                <td><%= u.nombre %>: </td>
+                <td><%= truncate(p.gauchada.descripcion, length: 50) %></td>
+                </br>
+                </br>
+                <%= link_to '<i class="glyphicon glyphicon-ok"> Ver mas</i>'.html_safe, gauchada_path(p.gauchada), class: 'btn btn-success'%>
+              </div>
+            </div>
+            <%end%>
+          </div>
+          <div class="tab-pane" id="finalizadas">
+            <% @postulaciones_finalizadas.each do |p| %>
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+              <a class="thumbnail">
+                <img class="img-responsive" style="width: 200px; height: 200px" src="<%=p.gauchada.imagen%>" alt="">
+              </a>
+              <div class = "caption" style="width: 200px; height: 200px">
+                <%u=Usuario.find(p.gauchada.usuario_id)%>
+                <td><%= u.nombre %>: </td>
+                <td><%= truncate(p.gauchada.descripcion, length: 50) %></td>
+                </br>
+                </br>
+                <%= link_to '<i class="glyphicon glyphicon-ok"> Ver mas</i>'.html_safe, gauchada_path(p.gauchada), class: 'btn btn-success'%>
+              </div>
+            </div>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

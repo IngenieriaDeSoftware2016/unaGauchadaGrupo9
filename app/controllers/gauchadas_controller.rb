@@ -11,6 +11,22 @@ class GauchadasController < ApplicationController
     @comentarios=@gauchada.comentarios
   end
 
+
+  def misgauchadascompletadas
+    @postulaciones=current_usuario.postulantes.where(estado: true)
+    @gauchadas=Set.new
+    @postulaciones.each do |p|
+      if(p.gauchada.estado=="finalizada")
+        @gauchadas.add(p.gauchada)
+      end
+    end
+    if(@gauchadas.empty?)
+      flash[:alert]="Usted no ha completado ninguna gauchada"
+      redirect_to root_path
+    end
+  end
+
+
   def edit
     @gauchada = Gauchada.find(params[:id])
     if current_usuario.nil?
