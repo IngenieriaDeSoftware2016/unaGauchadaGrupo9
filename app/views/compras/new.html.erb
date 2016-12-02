@@ -17,6 +17,11 @@
 	<%= c.number_field :cantidad_puntos, min: 1, :value => 1, autofocus: true,required: true %>
 </div>
 
+<div class="field">
+	<label for="inputCard" class="col-form-label">Nombre completo titular:</label>
+	<input type="text" class="form-control" id="inputCard" placeholder="Nombre completo titular" required="true">
+</div>
+
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
 	Comprar
 </button>
@@ -57,4 +62,6 @@
 
 <% end %>
 
+<br>
+<br>
 <%= link_to "Volver", :back %>
