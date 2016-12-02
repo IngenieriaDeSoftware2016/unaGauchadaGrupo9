@@ -25,13 +25,24 @@
 <br><br>
 <div class="field">
 	<label for="inputCard" class="col-form-label">Fecha de vencimiento:</label>
-	<input type="text" data-provide='datepicker' >
+	<input type="text" data-provide='datepicker'>
 	<script type="text/javascript">
 		$(document).ready(function () {
 			$('.datepicker').datepicker();
 		});
 	</script>
 </div>
+
+<div>
+	<label for="inputCard" class="col-form-label">Numero de tarjeta</label>
+	<input type="tel" class="form-control" id="inputCard" placeholder="555555555" required="true">
+</div>
+
+<div>
+	<label for="inputCard" class="col-form-label">Numero de seguridad</label>
+	<input type="tel" class="form-control" id="inputCard" placeholder="123" required="true">
+</div>
+
 <br><br>
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
 	Comprar
