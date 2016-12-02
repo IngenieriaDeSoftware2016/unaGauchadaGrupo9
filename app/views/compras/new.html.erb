@@ -23,11 +23,14 @@
 </div>
 
 <div class="field">
-	<label for="inputCard" class="col-form-label">Nombre completo titular:</label>
-	<input type="text" class="form-control" placeholder="Nombre completo titular" required="true">
+	<input type="text" class='datepicker'>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('.datepicker').datepicker();
+		});
+	</script>
 </div>
-
-
 <br><br>
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
 	Comprar
