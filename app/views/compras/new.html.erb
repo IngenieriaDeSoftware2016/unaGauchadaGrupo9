@@ -18,9 +18,15 @@
 </div>
 
 <div class="field">
-	<%= c.date_select :vencimiento, {:order => [:day, :month, :year], :prompt => true, :start_month => Time.now.month, :end_year => Time.now.year+5},
-     {required: true} %>
+	<label for="inputCard" class="col-form-label">Nombre completo titular:</label>
+	<input type="text" class="form-control" placeholder="Nombre completo titular" required="true">
 </div>
+
+<div class="field">
+	<label for="inputCard" class="col-form-label">Nombre completo titular:</label>
+	<input type="text" class="form-control" placeholder="Nombre completo titular" required="true">
+</div>
+
 
 <br><br>
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
