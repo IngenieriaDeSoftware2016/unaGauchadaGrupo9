@@ -16,7 +16,7 @@ class GauchadasController < ApplicationController
     @postulaciones=current_usuario.postulantes.where(estado: true)
     @gauchadas=Set.new
     @postulaciones.each do |p|
-      if(p.gauchada.estado=="finalizada")
+      if(p.gauchada.estado=="finalizada" && p.estado==true)
         @gauchadas.add(p.gauchada)
       end
     end
@@ -26,6 +26,40 @@ class GauchadasController < ApplicationController
     end
   end
 
+  def positivo
+    @gauchada=Gauchada.find(params[:id])
+    @gauchada.estado="finalizada"
+    @gauchada.save
+    @usuario=@gauchada.postulantes.where(estado: :true).first.usuario
+    @usuario.puntaje=@usuario.puntaje+1
+    @usuario.save
+    flash[:notice]="Gauchada marcada como resuelta"
+    redirect_to gauchada_path(@gauchada)
+  end
+
+  def negativo
+    @gauchada=Gauchada.find(params[:id])
+    @gauchada.estado="finalizada"
+    @gauchada.save
+    @usuario=@gauchada.postulantes.where(estado: :true).first.usuario
+    @usuario.puntaje=@usuario.puntaje-2
+    @usuario.save
+    flash[:notice]="Gauchada marcada como resuelta"
+    redirect_to gauchada_path(@gauchada)
+  end
+
+  def rechazar
+    @gauchada=Gauchada.find(params[:id])
+    @usuario=@gauchada.postulantes.where(estado: :true).first.usuario
+    @postulante=@gauchada.postulantes.where(estado: :true).first
+    @postulante.delete
+    @usuario.puntaje=@usuario.puntaje-2
+    @usuario.save
+    @gauchada.estado="libre"
+    @gauchada.save
+    flash[:notice]="La gauchada vuelve a estar abierta a postulaciones"
+    redirect_to gauchada_path(@gauchada)
+  end
 
   def edit
     @gauchada = Gauchada.find(params[:id])
