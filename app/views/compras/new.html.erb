@@ -1,4 +1,4 @@
-	<%= form_for(@compra) do |c| %>
+	<%= bootstrap_form_for(@compra) do |c| %>
   <div class="field">
     <%= c.hidden_field :usuario_id, :value => current_usuario.id%>
   </div>
@@ -7,15 +7,23 @@
     <%= c.hidden_field :precio_total, :value => 0%>
   </div>
 
-	<h3>Precio unitario<span class="label label-default"><%= precio_u = Usuario.find(10).puntaje%>$</span></h3>
+	<h3>Precio unitario<span class="label label-default">10$</span></h3>
 	<div class="field">
-		<%= c.hidden_field :precio_unitario, :value => precio_u%>
+		<%= c.hidden_field :precio_unitario, :value => 10%>
 	</div>
 
   <div class="field">
-    <%= c.label :cantidad_puntos %><br />
 		<%= c.number_field :cantidad_puntos, min: 1, :value => 1, autofocus: true,required: true %>
   </div>
+
+	<div class="field">
+		<%= c.number_field :numero_de_tarjeta, min: 1, :value => 1, autofocus: true,required: true %>
+	</div>
+
+	<div class="field">
+		<%= c.number_field :codigo_de_verificacion, min: 1, :value => 1, autofocus: true,required: true %>
+	</div>
+
 
 	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
 		Comprar
@@ -32,7 +40,7 @@
 	        <h4 class="modal-title" id="myModalLabel">Confirmar compra</h4>
 	      </div>
 	      <div class="modal-body">
-					<div>
+					<!-- <div>
 						<label for="inputCard" class="col-form-label">Numero de tarjeta</label>
     				<div>
       				<input type="tel" class="form-control" id="inputCard" placeholder="555555555" required="true">
@@ -43,7 +51,8 @@
     				<div>
       				<input type="tel" class="form-control" id="inputCard" placeholder="123" required="true">
     				</div>
-					</div>
+					</div> -->
+					<span aria-hidden="true">¿Esta seguro que quiere confirmar la compra?</span>
 	      </div>
 	      <div class="modal-footer">
 					<div class="actions">
