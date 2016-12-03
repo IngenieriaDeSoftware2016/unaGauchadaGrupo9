@@ -34,6 +34,10 @@ Rails.application.routes.draw do
     get 'gauchadas/:id/postulantes' => :postulantes, :as => :gauchadas_postulantes
   end
 
+
+  get 'gauchadas/:id/positivo' , to: 'gauchadas#positivo', :as => :positivo
+  get 'gauchadas/:id/negativo' , to: 'gauchadas#negativo', :as => :negativo
+  get 'gauchadas/:id/rechazar' , to: 'gauchadas#rechazar', :as => :rechazar
   get '/logros/new' , to: 'logros#new'
   get '/postulantes/:id/aceptar' , to: 'postulantes#aceptar', :as => :aceptar_postulante
   get '/logros/show' , to: 'logros#show'

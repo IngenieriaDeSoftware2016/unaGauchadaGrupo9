@@ -20,6 +20,36 @@
     </div>
 </div>
 
+<!-- Modal 2-->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Calificar</h4>
+            </div>
+            <div class="modal-body">
+                ¿<%@nombre=@gauchada.postulantes.where(estado: :true).first%>
+                <%if(@nombre!=nil)%>
+                   <%=@nombre.usuario.nombre%>
+                <%end%> contribuyo a la solucion de tu gauchada?
+                <%@calificacion=1%>
+              </br>
+                Calificar negativo:
+                <%= link_to '<i class="glyphicon glyphicon-thumbs-down"></i>'.html_safe, negativo_path(@gauchada), class: 'btn btn-warning'%>
+                Calificar positivo:
+                <%= link_to '<i class="glyphicon glyphicon-thumbs-up"></i>'.html_safe, positivo_path(@gauchada,@calificacion), class: 'btn btn-success'%>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No, mejor no</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 </br>
 
 <div class="panel panel-default">
@@ -52,7 +82,7 @@
         <i><%= l(@gauchada.vencimiento, format: '%d de %B de %Y') %></i>
       </h4>
       <br>
-      <%if !current_usuario.nil? && @gauchada.estado!="en proceso" %>
+      <%if !current_usuario.nil? && @gauchada.estado=="libre" %>
         <%if current_usuario.id==@gauchada.usuario_id%>
           Editar:
           <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_gauchada_path(@gauchada), class: 'btn btn-warning'%>
@@ -67,8 +97,10 @@
       <% end %>
       <%if !current_usuario.nil?%>
         <%if (@gauchada.estado=="en proceso"  && @gauchada.usuario_id==current_usuario.id) %>
-          <%= link_to '<i class="glyphicon glyphicon-ok">Resuelta</i>'.html_safe, under_construction_path, class: 'btn btn-success'%>
-          <%= link_to '<i class="glyphicon glyphicon-remove">Rechazar</i>'.html_safe, under_construction_path, class: 'btn btn-danger'%>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
+          Resolver
+        </button>
+          <%= link_to '<i class="glyphicon glyphicon-remove">Rechazar</i>'.html_safe, rechazar_path(@gauchada), class: 'btn btn-danger'%>
           </br>
           </br>
           <p><span class="large">Contacto postulante:</span>
