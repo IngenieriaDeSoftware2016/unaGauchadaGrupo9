@@ -57,7 +57,7 @@
   private
 
    def compra_params
-      params.require(:compra).permit(:usuario_id, :precio_unitario, :precio_total, :cantidad_puntos, :vencimieto_tarjeta, :numero_tarjeta, :cs_tarjeta, :nombre_t_tarjeta)
+      params.require(:compra).permit(:usuario_id, :precio_unitario, :precio_total, :cantidad_puntos)
    end
 
 end
