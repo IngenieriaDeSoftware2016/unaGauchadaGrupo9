@@ -24,7 +24,7 @@
 </div>
 
 <div class="field">
-	<%= c.text_field :numero_tarjeta, :pattern =>"(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$", placeholder:'5555555555555555', required: true, autofocus: true %>
+	<%= c.text_field :numero_tarjeta, :pattern =>"5[1-5]\d{14}", placeholder:'5555555555555555', required: true, autofocus: true %>
 </div>
 
 <div class="field">
