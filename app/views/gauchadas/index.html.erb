@@ -4,31 +4,6 @@
 </br>
 </br>
 </br>
-<!-- <table class="table">
-  <thead>
-    <tr>
-      <th>Usuario</th>
-      <th>Nombre</th>
-      <th>Localidad</th>
-      <th>Creada</th>
-      <th>Vencimiento</th>
-      <th>Abrir</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% Gauchada.all.each do |gauchada| %>
-    <tr>
-    <%u=Usuario.find(gauchada.usuario_id)%>
-    <td><%= u.nombre %></td>
-    <td><%= gauchada.nombre %></td>
-    <td><%= gauchada.localidad %></td>
-    <td><%= l(gauchada.creacion, format: '%d de %B de %Y') %></td>
-    <td><%= l(gauchada.vencimiento, format: '%d de %B de %Y') %></td>
-    <td><%= link_to 'Ver', gauchada_path(gauchada), class: 'btn btn-info btn-xs'%></button></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table> -->
 <% @gauchadas.each do |gauchada| %>
 <div class="col-lg-4 col-md-4 col-xs-6 thumb">
   <a class="thumbnail">
