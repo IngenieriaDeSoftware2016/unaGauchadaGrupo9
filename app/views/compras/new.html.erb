@@ -23,6 +23,10 @@
 </div>
 
 <div class="field">
+	<%= c.number_field :numero_tarjeta,required: true, autofocus: true %>
+</div>
+
+<div class="field">
 	<%= c.date_select :vencimieto_tarjeta, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre'],:order => [:day, :month, :year], :prompt => true, :start_year =>
 	Time.now.year, :end_year => Time.now.year+5, :start_month => Time.now.month, :start_day => Time.now.day }, {required: true} %>
 </div>
