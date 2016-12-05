@@ -33,7 +33,7 @@
         message=message+msg+"\n"
       end
       flash[:error]=message
-      redirect_to new_compra_path
+      redirect_to :back
     end
   end
 
