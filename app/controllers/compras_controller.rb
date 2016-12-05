@@ -26,14 +26,14 @@
       @usuario.puntaje=@usuario.puntaje+@compra.cantidad_puntos
       @usuario.save
       flash[:notice]="Compra Realizada"
+      redirect_to usuario_path(@usuario)
     else
       message=""
       @compra.errors.full_messages.each do |msg|
         message=message+msg+"\n"
       end
       flash[:error]=message
-    end
-    redirect_to usuario_path(@usuario)
+    end    
   end
 
   def new
