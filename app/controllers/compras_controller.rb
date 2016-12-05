@@ -37,7 +37,8 @@
           redirect_to :back
         end
     else
-
+      flash[:error]="Su tarjeta esta vencida"
+      redirect_to :back
     end
   end
 
