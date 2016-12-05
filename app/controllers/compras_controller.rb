@@ -21,19 +21,23 @@
   def create
     @compra = Compra.new(compra_params)
     @compra.precio_total=@compra.precio_unitario*@compra.cantidad_puntos
-    if(@compra.save)
-      @usuario=Usuario.find(@compra.usuario_id)
-      @usuario.puntaje=@usuario.puntaje+@compra.cantidad_puntos
-      @usuario.save
-      flash[:notice]="Compra Realizada"
-      redirect_to usuario_path(@usuario)
+    if(@compra.vencimieto_tarjeta>=Date.today)
+        if(@compra.save)
+          @usuario=Usuario.find(@compra.usuario_id)
+          @usuario.puntaje=@usuario.puntaje+@compra.cantidad_puntos
+          @usuario.save
+          flash[:notice]="Compra Realizada"
+          redirect_to usuario_path(@usuario)
+        else
+          message=""
+          @compra.errors.full_messages.each do |msg|
+            message=message+msg+"\n"
+          end
+          flash[:error]=message
+          redirect_to :back
+        end
     else
-      message=""
-      @compra.errors.full_messages.each do |msg|
-        message=message+msg+"\n"
-      end
-      flash[:error]=message
-      redirect_to :back
+
     end
   end
 
